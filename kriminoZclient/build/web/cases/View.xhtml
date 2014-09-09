@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ViewCasesTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputText value="#{bundle.ViewCasesLabel_caseCode}"/>
+                    <h:outputText value="#{casesController.selected.caseCode}" title="#{bundle.ViewCasesTitle_caseCode}"/>
+                    <h:outputText value="#{bundle.ViewCasesLabel_station}"/>
+                    <h:outputText value="#{casesController.selected.station}" title="#{bundle.ViewCasesTitle_station}"/>
+                    <h:outputText value="#{bundle.ViewCasesLabel_district}"/>
+                    <h:outputText value="#{casesController.selected.district}" title="#{bundle.ViewCasesTitle_district}"/>
+                    <h:outputText value="#{bundle.ViewCasesLabel_entityCode}"/>
+                    <h:outputText value="#{casesController.selected.entityCode}" title="#{bundle.ViewCasesTitle_entityCode}"/>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{casesController.destroyAndView}" value="#{bundle.ViewCasesDestroyLink}"/>
+                <br />
+                <br />
+                <h:link outcome="Edit" value="#{bundle.ViewCasesEditLink}"/>
+                <br />
+                <h:commandLink action="#{casesController.prepareCreate}" value="#{bundle.ViewCasesCreateLink}" />
+                <br />
+                <h:commandLink action="#{casesController.prepareList}" value="#{bundle.ViewCasesShowAllLink}"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.ViewCasesIndexLink}"/>
+
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

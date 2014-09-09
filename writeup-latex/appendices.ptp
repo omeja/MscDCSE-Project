@@ -1,0 +1,7 @@
+# PCTeX Project File, Version 1.1
+	name: appendices
+	texformat: LATEX
+appendices.TEX
+	wndpos: 1 -1 -1 -1 -1 175 175 1521 690
+	zorder: 0
+	edit: 188

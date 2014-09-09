@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.EditTransfersTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.EditTransfersLabel_id}" for="id" />
+                    <h:inputText id="id" value="#{transfersController.selected.id}" title="#{bundle.EditTransfersTitle_id}" required="true" requiredMessage="#{bundle.EditTransfersRequiredMessage_id}"/>
+                    <h:outputLabel value="#{bundle.EditTransfersLabel_tdate}" for="tdate" />
+                    <h:inputText id="tdate" value="#{transfersController.selected.tdate}" title="#{bundle.EditTransfersTitle_tdate}" >
+                        <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                    </h:inputText>
+                    <h:outputLabel value="#{bundle.EditTransfersLabel_tamount}" for="tamount" />
+                    <h:inputText id="tamount" value="#{transfersController.selected.tamount}" title="#{bundle.EditTransfersTitle_tamount}" />
+                    <h:outputLabel value="#{bundle.EditTransfersLabel_froaccount}" for="froaccount" />
+                    <h:inputText id="froaccount" value="#{transfersController.selected.froaccount}" title="#{bundle.EditTransfersTitle_froaccount}" />
+                    <h:outputLabel value="#{bundle.EditTransfersLabel_toaccount}" for="toaccount" />
+                    <h:inputText id="toaccount" value="#{transfersController.selected.toaccount}" title="#{bundle.EditTransfersTitle_toaccount}" />
+                    <h:outputLabel value="#{bundle.EditTransfersLabel_frobank}" for="frobank" />
+                    <h:inputText id="frobank" value="#{transfersController.selected.frobank}" title="#{bundle.EditTransfersTitle_frobank}" />
+                    <h:outputLabel value="#{bundle.EditTransfersLabel_tobank}" for="tobank" />
+                    <h:inputText id="tobank" value="#{transfersController.selected.tobank}" title="#{bundle.EditTransfersTitle_tobank}" />
+                    <h:outputLabel value="#{bundle.EditTransfersLabel_cases}" for="cases" />
+                    <h:inputText id="cases" value="#{transfersController.selected.cases}" title="#{bundle.EditTransfersTitle_cases}" />
+                    <h:outputLabel value="#{bundle.EditTransfersLabel_wrkplanid}" for="wrkplanid" />
+                    <h:selectOneMenu id="wrkplanid" value="#{transfersController.selected.wrkplanid}" title="#{bundle.EditTransfersTitle_wrkplanid}" >
+                        <f:selectItems value="#{workplanController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                    <h:outputLabel value="#{bundle.EditTransfersLabel_taskid}" for="taskid" />
+                    <h:selectOneMenu id="taskid" value="#{transfersController.selected.taskid}" title="#{bundle.EditTransfersTitle_taskid}" >
+                        <f:selectItems value="#{tasksController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                    <h:outputLabel value="#{bundle.EditTransfersLabel_contractid}" for="contractid" />
+                    <h:selectOneMenu id="contractid" value="#{transfersController.selected.contractid}" title="#{bundle.EditTransfersTitle_contractid}" >
+                        <f:selectItems value="#{contractsController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                    <h:outputLabel value="#{bundle.EditTransfersLabel_timestamp3}" for="timestamp3" />
+                    <h:inputText id="timestamp3" value="#{transfersController.selected.timestamp3}" title="#{bundle.EditTransfersTitle_timestamp3}" >
+                        <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                    </h:inputText>
+                </h:panelGrid>
+                <h:commandLink action="#{transfersController.update}" value="#{bundle.EditTransfersSaveLink}"/>
+                <br />
+                <br />
+                <h:link outcome="View" value="#{bundle.EditTransfersViewLink}"/>
+                <br />
+                <h:commandLink action="#{transfersController.prepareList}" value="#{bundle.EditTransfersShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.EditTransfersIndexLink}" />
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

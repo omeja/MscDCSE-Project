@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ViewIncomeTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputText value="#{bundle.ViewIncomeLabel_itemno}"/>
+                    <h:outputText value="#{incomeController.selected.itemno}" title="#{bundle.ViewIncomeTitle_itemno}"/>
+                    <h:outputText value="#{bundle.ViewIncomeLabel_description}"/>
+                    <h:outputText value="#{incomeController.selected.description}" title="#{bundle.ViewIncomeTitle_description}"/>
+                    <h:outputText value="#{bundle.ViewIncomeLabel_incometype}"/>
+                    <h:outputText value="#{incomeController.selected.incometype}" title="#{bundle.ViewIncomeTitle_incometype}"/>
+                    <h:outputText value="#{bundle.ViewIncomeLabel_frequency}"/>
+                    <h:outputText value="#{incomeController.selected.frequency}" title="#{bundle.ViewIncomeTitle_frequency}"/>
+                    <h:outputText value="#{bundle.ViewIncomeLabel_amount}"/>
+                    <h:outputText value="#{incomeController.selected.amount}" title="#{bundle.ViewIncomeTitle_amount}"/>
+                    <h:outputText value="#{bundle.ViewIncomeLabel_casecode}"/>
+                    <h:outputText value="#{incomeController.selected.casecode}" title="#{bundle.ViewIncomeTitle_casecode}"/>
+                    <h:outputText value="#{bundle.ViewIncomeLabel_timestamp6}"/>
+                    <h:outputText value="#{incomeController.selected.timestamp6}" title="#{bundle.ViewIncomeTitle_timestamp6}">
+                        <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                    </h:outputText>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{incomeController.destroyAndView}" value="#{bundle.ViewIncomeDestroyLink}"/>
+                <br />
+                <br />
+                <h:link outcome="Edit" value="#{bundle.ViewIncomeEditLink}"/>
+                <br />
+                <h:commandLink action="#{incomeController.prepareCreate}" value="#{bundle.ViewIncomeCreateLink}" />
+                <br />
+                <h:commandLink action="#{incomeController.prepareList}" value="#{bundle.ViewIncomeShowAllLink}"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.ViewIncomeIndexLink}"/>
+
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

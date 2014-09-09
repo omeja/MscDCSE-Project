@@ -1,0 +1,12 @@
+krimino notes
+
+log files for events processed
+
+verbose mode during procesing
+
+button to view logs
+
+
+link to record table view
+
+log in window/form

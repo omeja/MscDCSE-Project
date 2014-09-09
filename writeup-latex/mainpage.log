@@ -1,0 +1,379 @@
+This is TeX, Version 3.14159 (Web2c 7.3.3.1) (format=LATEX 2003.8.21)  5 SEP 2014 11:14
+**&LATEX mainpage.TEX
+(./mainpage.TEX
+LaTeX2e <2001/06/01>
+Babel <v3.7h> and hyphenation patterns for american, loaded.
+(c:/Program Files (x86)/PCTeX/PCTeXv5/texmf/tex/latex/base/article.cls
+Document Class: article 2001/04/21 v1.4e Standard LaTeX document class
+(c:/Program Files (x86)/PCTeX/PCTeXv5/texmf/tex/latex/base/size12.clo
+File: size12.clo 2001/04/21 v1.4e Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@section=\count80
+\c@subsection=\count81
+\c@subsubsection=\count82
+\c@paragraph=\count83
+\c@subparagraph=\count84
+\c@figure=\count85
+\c@table=\count86
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+(c:/Program Files (x86)/PCTeX/PCTeXv5/texmf/tex/latex/ltxmisc/url.sty
+\Urlmuskip=\muskip10
+Package: url 1999/03/28  ver 1.5x  Verb mode for urls, etc.
+)
+(c:/Program Files (x86)/PCTeX/PCTeXv5/texmf/tex/latex/tools/enumerate.sty
+Package: enumerate 1999/03/05 v3.00 enumerate extensions (DPC)
+\@enLab=\toks14
+)
+(c:/Program Files (x86)/PCTeX/PCTeXv5/texmf/tex/latex/ltxmisc/parskip.sty
+Package: parskip 2001/04/09 non-zero parskip adjustments
+)
+(c:/Program Files (x86)/PCTeX/PCTeXv5/texmf/tex/latex/amsfonts/amssymb.sty
+Package: amssymb 2002/01/22 v2.2d
+
+(c:/Program Files (x86)/PCTeX/PCTeXv5/texmf/tex/latex/amsfonts/amsfonts.sty
+Package: amsfonts 2001/10/25 v2.2f
+\@emptytoks=\toks15
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 132.
+))
+(c:/Program Files (x86)/PCTeX/PCTeXv5/texmf/tex/latex/graphics/graphicx.sty
+Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
+
+(c:/Program Files (x86)/PCTeX/PCTeXv5/texmf/tex/latex/graphics/keyval.sty
+Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+\KV@toks@=\toks16
+)
+(c:/Program Files (x86)/PCTeX/PCTeXv5/texmf/tex/latex/graphics/graphics.sty
+Package: graphics 2001/07/07 v1.0n Standard LaTeX Graphics (DPC,SPQR)
+
+(c:/Program Files (x86)/PCTeX/PCTeXv5/texmf/tex/latex/graphics/trig.sty
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+(c:/Program Files (x86)/PCTeX/PCTeXv5/texmf-pti/tex/latex/graphics.cfg)
+Package graphics Info: Driver file: dvips.def on input line 80.
+
+(c:/Program Files (x86)/PCTeX/PCTeXv5/texmf/tex/latex/graphics/dvips.def
+File: dvips.def 1999/02/16 v3.0i Driver-dependant file (DPC,SPQR)
+))
+\Gin@req@height=\dimen103
+\Gin@req@width=\dimen104
+)
+(c:/Program Files (x86)/PCTeX/PCTeXv5/texmf/tex/latex/base/bezier.sty)
+(c:/Program Files (x86)/PCTeX/PCTeXv5/texmf/tex/latex/psnfss/times.sty
+Package: times 2002/04/24 PSNFSS-v9.0 (SPQR) 
+)
+
+! LaTeX Error: File `comments.sty' not found.
+
+Type X to quit or <RETURN> to proceed,
+or enter new name. (Default extension: sty)
+
+Enter file name: 
+(c:/Program Files (x86)/PCTeX/PCTeXv5/texmf/tex/latex/graphics/color.sty
+Package: color 1999/02/16 v1.0i Standard LaTeX Color (DPC)
+
+(c:/Program Files (x86)/PCTeX/PCTeXv5/texmf-pti/tex/latex/color.cfg)
+Package color Info: Driver file: dvips.def on input line 125.
+
+(c:/Program Files (x86)/PCTeX/PCTeXv5/texmf/tex/latex/graphics/dvipsnam.def
+File: dvipsnam.def 1999/02/16 v3.0i Driver-dependant file (DPC,SPQR)
+))
+(./mainpage.aux (./project-title.aux) (./introductory-pages.aux)
+(./introduction.aux) (./literature.aux) (./methodology.aux)
+(./pattern-detection.aux) (./conclusion.aux) (./appendices.aux))
+\openout1 = `mainpage.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Try loading font information for OT1+ptm on input line 18.
+
+(c:/Program Files (x86)/PCTeX/PCTeXv5/texmf/tex/latex/psnfss/ot1ptm.fd
+File: ot1ptm.fd 2000/01/12 PSNFSS-v8.1 font definitions for OT1/ptm.
+)
+(c:/Program Files (x86)/PCTeX/PCTeXv5/texmf-pti/tex/tex/legacy/setbmp.tex)
+\openout2 = `project-title.aux'.
+
+
+(./project-title.tex
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 3.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <17.28> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 3.
+
+(c:/Program Files (x86)/PCTeX/PCTeXv5/texmf-pti/tex/tex/legacy/setbmp.tex)
+\c@defn=\count87
+)
+[1
+
+
+]
+\openout2 = `introductory-pages.aux'.
+
+ (./introductory-pages.tex
+Underfull \hbox (badness 10000) in paragraph at lines 5--16
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 5--16
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 5--16
+
+ []
+
+[1
+
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 18--35
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 18--35
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 18--35
+
+ []
+
+[2]
+Underfull \hbox (badness 10000) in paragraph at lines 37--43
+
+ []
+
+[3]
+Underfull \hbox (badness 10000) in paragraph at lines 47--58
+
+ []
+
+[4]
+LaTeX Font Info:    Try loading font information for U+msa on input line 62.
+ (c:/Program Files (x86)/PCTeX/PCTeXv5/texmf/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2002/01/19 v2.2g AMS font definitions
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 62.
+
+(c:/Program Files (x86)/PCTeX/PCTeXv5/texmf/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2002/01/19 v2.2g AMS font definitions
+)
+Overfull \vbox (16.55212pt too high) has occurred while \output is active []
+
+
+[5] [6] (./mainpage.toc [7] [8])
+\tf@toc=\write3
+\openout3 = `mainpage.toc'.
+
+) [9]
+\openout2 = `introduction.aux'.
+
+ (./introduction.tex [1
+
+
+] [2]
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <14.4> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 15.
+ [3]) [4]
+\openout2 = `literature.aux'.
+
+
+(./literature.tex [5
+
+
+] [6]
+Missing character: There is no ’ in font ptmr7t!
+Missing character: There is no ’ in font ptmr7t!
+ [7]
+Missing character: There is no … in font ptmr7t!
+ [8] [9] [10] [11] [12] [13] [14] [15]) [16]
+\openout2 = `methodology.aux'.
+
+
+(./methodology.tex
+(c:/Program Files (x86)/PCTeX/PCTeXv5/texmf-pti/tex/tex/legacy/setbmp.tex)
+[17
+
+
+] [18]
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[19] [20]
+Overfull \hbox (5.73752pt too wide) in paragraph at lines 109--110
+[]\OT1/ptm/m/n/12 The in-ves-ti-ga-tion tool was de-vel-oped us-ing a range of 
+tools and plat-forms re-flect-ing the MVC(Model
+ []
+
+[21] [22] [23]
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[24]
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[25] [26] [27]
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[28]
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[29] [30] [31]
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[32] [33] [34] [35]) [36]
+\openout2 = `pattern-detection.aux'.
+
+ (./pattern-detection.tex
+(c:/Program Files (x86)/PCTeX/PCTeXv5/texmf-pti/tex/tex/legacy/setbmp.tex)
+[37
+
+
+] [38] [39]
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+) [40] [41]
+\openout2 = `conclusion.aux'.
+
+ (./conclusion.tex
+(c:/Program Files (x86)/PCTeX/PCTeXv5/texmf-pti/tex/tex/legacy/setbmp.tex)
+[42
+
+
+]) [43] (./mainpage.bbl
+LaTeX Font Info:    Try loading font information for OT1+pcr on input line 25.
+
+(c:/Program Files (x86)/PCTeX/PCTeXv5/texmf/tex/latex/psnfss/ot1pcr.fd
+File: ot1pcr.fd 2000/01/12 PSNFSS-v8.1 font definitions for OT1/pcr.
+)
+Underfull \hbox (badness 10000) in paragraph at lines 23--29
+\OT1/pcr/m/n/12 com / docs / FUNDAMENTALSOFCRIMINALINVESTIGAT % IONS . pdf$\OT1
+/ptm/m/n/12 .  Ac-cessed:
+ []
+
+
+Underfull \hbox (badness 7722) in paragraph at lines 38--43
+[][]\OT1/ptm/m/n/12 U. o. N. C. a. C. H. David A. Plaisted.  Fun-da-men-tals of
+ crim-i-nal in-
+ []
+
+
+Underfull \hbox (badness 7099) in paragraph at lines 38--43
+\OT1/ptm/m/n/12 ves-ti-ga-tion.  $\OT1/pcr/m/n/12 Available : http : / / www . 
+cs . unc . edu / ~plaisted / comp550 /
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 65--71
+\OT1/pcr/m/n/12 / / faculty . washington . edu / jstraub / dsa / slides / 09Bin
+ary % 20Trees /
+ []
+
+[44
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 81--87
+[][]\OT1/ptm/m/n/12 D. Luck-ham.  A short his-tory of com-plex event pro-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 81--87
+\OT1/ptm/m/n/12 cess-ing part3 [on-line].  $\OT1/pcr/m/n/12 Available : http : 
+/ / www .
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 81--87
+\OT1/pcr/m/n/12 complexevents . com / 2008 / 12 / 18 / a-[]short-[]history-[]of
+-[]co %
+ []
+
+
+Underfull \hbox (badness 7344) in paragraph at lines 81--87
+\OT1/pcr/m/n/12 mplex-[]event-[]processing-[]part-[]3-[]the-[]formative-[]years
+/$\OT1/ptm/m/n/12 .  Ac-cessed:
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 112--118
+\OT1/pcr/m/n/12 / / www . emich . edu / cerns / downloads / papers / PoliceStaf
+f / Unsorted /
+ []
+
+[45]
+Underfull \hbox (badness 10000) in paragraph at lines 142--147
+\OT1/pcr/m/n/12 / / www . upf . go . ug / attachments / article / 5 / Annual _ 
+Crime _ Report _
+ []
+
+Missing character: There is no ’ in font ptmr7t!
+
+Underfull \hbox (badness 10000) in paragraph at lines 149--155
+\OT1/pcr/m/n/12 googlecode . com / files / indexed _ primefaces _ users _ guide
+ _ 3 _ 5 . p % df$\OT1/ptm/m/n/12 .
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 174--180
+\OT1/ptm/m/n/12 (mcdb)[online].  $\OT1/pcr/m/n/12 Available : http : / / www . 
+fedcentric . com / collateral /
+ []
+
+[46]
+Underfull \hbox (badness 3601) in paragraph at lines 208--214
+[][]\OT1/ptm/m/n/12 C. West-phal.  Anatomy of a fi-nan-cial crime [on-line].  $
+\OT1/pcr/m/n/12 Available : https :
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 208--214
+\OT1/pcr/m/n/12 / / support . visualanalytics . com / technicalarticles / white
+paper /
+ []
+
+) [47]
+\openout2 = `appendices.aux'.
+
+ (./appendices.tex
+(c:/Program Files (x86)/PCTeX/PCTeXv5/texmf-pti/tex/tex/legacy/setbmp.tex)
+[48
+
+] [49] [50]) [51] (./mainpage.aux (./project-title.aux)
+(./introductory-pages.aux) (./introduction.aux) (./literature.aux)
+(./methodology.aux) (./pattern-detection.aux) (./conclusion.aux)
+(./appendices.aux)) ) 
+Here is how much of TeX's memory you used:
+ 1297 strings out of 10878
+ 18247 string characters out of 70979
+ 1054292 words of memory out of 1263001
+ 4141 multiletter control sequences out of 10000+0
+ 12136 words of font info for 40 fonts, out of 200000 for 1000
+ 14 hyphenation exceptions out of 1000
+ 25i,7n,24p,1386b,322s stack positions out of 300i,100n,500p,200000b,4000s
+
+Output written on mainpage.dvi (61 pages, 138564 bytes).

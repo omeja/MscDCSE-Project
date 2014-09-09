@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ViewEmailsTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputText value="#{bundle.ViewEmailsLabel_emailID}"/>
+                    <h:outputText value="#{emailsController.selected.emailID}" title="#{bundle.ViewEmailsTitle_emailID}"/>
+                    <h:outputText value="#{bundle.ViewEmailsLabel_edate}"/>
+                    <h:outputText value="#{emailsController.selected.edate}" title="#{bundle.ViewEmailsTitle_edate}"/>
+                    <h:outputText value="#{bundle.ViewEmailsLabel_sourceAddr}"/>
+                    <h:outputText value="#{emailsController.selected.sourceAddr}" title="#{bundle.ViewEmailsTitle_sourceAddr}"/>
+                    <h:outputText value="#{bundle.ViewEmailsLabel_destAddr}"/>
+                    <h:outputText value="#{emailsController.selected.destAddr}" title="#{bundle.ViewEmailsTitle_destAddr}"/>
+                    <h:outputText value="#{bundle.ViewEmailsLabel_casecode}"/>
+                    <h:outputText value="#{emailsController.selected.casecode}" title="#{bundle.ViewEmailsTitle_casecode}"/>
+                    <h:outputText value="#{bundle.ViewEmailsLabel_reqidd}"/>
+                    <h:outputText value="#{emailsController.selected.reqidd}" title="#{bundle.ViewEmailsTitle_reqidd}"/>
+                    <h:outputText value="#{bundle.ViewEmailsLabel_timestamp11}"/>
+                    <h:outputText value="#{emailsController.selected.timestamp11}" title="#{bundle.ViewEmailsTitle_timestamp11}">
+                        <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                    </h:outputText>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{emailsController.destroyAndView}" value="#{bundle.ViewEmailsDestroyLink}"/>
+                <br />
+                <br />
+                <h:link outcome="Edit" value="#{bundle.ViewEmailsEditLink}"/>
+                <br />
+                <h:commandLink action="#{emailsController.prepareCreate}" value="#{bundle.ViewEmailsCreateLink}" />
+                <br />
+                <h:commandLink action="#{emailsController.prepareList}" value="#{bundle.ViewEmailsShowAllLink}"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.ViewEmailsIndexLink}"/>
+
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

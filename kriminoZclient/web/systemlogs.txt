@@ -1,0 +1,12 @@
+
+2014/09/05 10:24:55:{Taskid=PENDING, tfroacct=101223224, contrid=5000000, ttoacct=102335655, tdate=Thu Jan 16 23:12:01 EAT 2003, wkplanid=NA, tamount=20000000}
+
+2014/09/05 10:24:55:{Taskid=PENDING, tfroacct=101223224, contrid=5000000, ttoacct=102335655, tdate=Thu Jan 16 23:12:01 EAT 2003, wkplanid=NA, tamount=20000000}
+
+2014/09/05 10:24:55:{limits=1000000, bankstaffid=JAMES, creditbank=TROPICAL BANK, debitamount=5000000, creditacct=001002003, status=DORMANT, debitacctno=001002001, bdate=Sun May 05 15:10:53 EAT 2013, transfertype=EFT}
+
+2014/09/05 10:24:55:{limits=1000000, bankstaffid=JAMES, creditbank=TROPICAL BANK, debitamount=5000000, creditacct=001002003, status=DORMANT, debitacctno=001002001, bdate=Sun May 05 15:10:53 EAT 2013, transfertype=EFT}
+
+2014/09/05 10:24:55:{limits=1000000, bankstaffid=JONA, creditbank=KCB, debitamount=15000000, creditacct=001002004, status=DORMANT, debitacctno=001002002, bdate=Sun May 05 15:10:53 EAT 2013, transfertype=EFT}
+
+2014/09/05 10:24:55:{limits=1000000, bankstaffid=JONA, creditbank=KCB, debitamount=15000000, creditacct=001002004, status=DORMANT, debitacctno=001002002, bdate=Sun May 05 15:10:53 EAT 2013, transfertype=EFT}

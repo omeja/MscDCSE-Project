@@ -1,0 +1,67 @@
+ \input setbmp
+\section {The Crime Investigation Tool}
+
+\noindent The system consists of four components at the highest level. These are the web client, processing engine (Esper), data source (MySQL Database) and application server (glassfish).This chapter explains how these components interact at a the highest level to process records and display to the user.
+
+\subsection{System Processes}
+
+\noindent A web user interface is used by crime investigators to select records of particular cases to be sent to the engine for processing and also to receive processed responses on web pages. The client communicates with the database to generate input data and interacts with managed beans (business logic) to send and receive events from the processing engine.
+\begin{enumerate}
+
+\item A user requests for records related to a particular case through the web interface. The records from the data source are sent to a processing engine that filters incoming events based on defined crime patterns.
+
+\begin{center}
+\begin{figure}[h]
+\centerbmp{14cm}{8cm}{t1.bmp}
+\caption{Data flow Diagram}
+
+\end{figure}
+\end{center}
+
+
+\item The engine processes the records generated from the database and sends regular responses to the web client showing events that have matched the described pattern. The engine implements a listener which constantly receives events as they stream in.The crime pattern is determined by the investigator and can be adjusted through the user interface.Records requested by the client are generated in CSV (Comma Separated Values) format and sent to the engine for processing. The records are stored in a MySQL Database for all cases that are being investigated. The events are represented in POJO (Plain Old Java Object) format with getters and setters in a form understandable to the CEP engine.
+
+\item Based on the processed data, the results are displayed to the web page and can be exported in various formats or printed.
+
+\begin{center}
+\begin{figure}[h]
+\centerbmp{14cm}{8cm}{t2.bmp}
+\caption{Data flow Diagram}
+
+\end{figure}
+\end{center}
+
+\end{enumerate}
+\subsection{Patterns Related to Bank Account Activity}
+
+\noindent Most criminals involved in financially related crimes tend to possess large sums of money in their bank accounts that exceed their source of income. These amounts are deposited on a regular basis (daily, weekly, monthly)in different bank branches and are also used to acquire property within a short period of time.In investigating such crimes, investigators analyze company data detailing the earnings of an individual and the payment dates of his/her salary.They also probe assets acquired by the individual from the past todate detailing accquisition periods and amounts. 
+
+Other details investigated include:-
+\begin{enumerate}
+\item Bank Statements for the both the individual and company for selected periods.
+\item Company budgets and financial statements.
+\item External sources of income of the individual.
+\item Financial authorization powers and signatory levels.
+\item Funds transfered from accounts within and out of the country.
+ \end{enumerate}
+
+Theerefore the processing engine was configured to store patterns checking stremed events (bank statements, funds transfers,expenditures) against salary, known assets and external sources of income.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

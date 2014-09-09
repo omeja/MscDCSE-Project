@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.CreateCasesTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.CreateCasesLabel_caseCode}" for="caseCode" />
+                    <h:inputText id="caseCode" value="#{casesController.selected.caseCode}" title="#{bundle.CreateCasesTitle_caseCode}" required="true" requiredMessage="#{bundle.CreateCasesRequiredMessage_caseCode}"/>
+                    <h:outputLabel value="#{bundle.CreateCasesLabel_station}" for="station" />
+                    <h:inputText id="station" value="#{casesController.selected.station}" title="#{bundle.CreateCasesTitle_station}" />
+                    <h:outputLabel value="#{bundle.CreateCasesLabel_district}" for="district" />
+                    <h:inputText id="district" value="#{casesController.selected.district}" title="#{bundle.CreateCasesTitle_district}" />
+                    <h:outputLabel value="#{bundle.CreateCasesLabel_entityCode}" for="entityCode" />
+                    <h:selectOneMenu id="entityCode" value="#{casesController.selected.entityCode}" title="#{bundle.CreateCasesTitle_entityCode}" >
+                        <f:selectItems value="#{entitiesController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{casesController.create}" value="#{bundle.CreateCasesSaveLink}" />
+                <br />
+                <br />
+                <h:commandLink action="#{casesController.prepareList}" value="#{bundle.CreateCasesShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.CreateCasesIndexLink}"/>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

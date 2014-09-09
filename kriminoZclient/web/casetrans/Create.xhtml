@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.CreateCasetransTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.CreateCasetransLabel_transactionid}" for="transactionid" />
+                    <h:inputText id="transactionid" value="#{casetransController.selected.transactionid}" title="#{bundle.CreateCasetransTitle_transactionid}" required="true" requiredMessage="#{bundle.CreateCasetransRequiredMessage_transactionid}"/>
+                    <h:outputLabel value="#{bundle.CreateCasetransLabel_transdate}" for="transdate" />
+                    <h:inputText id="transdate" value="#{casetransController.selected.transdate}" title="#{bundle.CreateCasetransTitle_transdate}" >
+                        <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                    </h:inputText>
+                    <h:outputLabel value="#{bundle.CreateCasetransLabel_transcode}" for="transcode" />
+                    <h:inputText id="transcode" value="#{casetransController.selected.transcode}" title="#{bundle.CreateCasetransTitle_transcode}" />
+                    <h:outputLabel value="#{bundle.CreateCasetransLabel_transAmount}" for="transAmount" />
+                    <h:inputText id="transAmount" value="#{casetransController.selected.transAmount}" title="#{bundle.CreateCasetransTitle_transAmount}" />
+                    <h:outputLabel value="#{bundle.CreateCasetransLabel_transType}" for="transType" />
+                    <h:inputText id="transType" value="#{casetransController.selected.transType}" title="#{bundle.CreateCasetransTitle_transType}" />
+                    <h:outputLabel value="#{bundle.CreateCasetransLabel_transaccount}" for="transaccount" />
+                    <h:inputText id="transaccount" value="#{casetransController.selected.transaccount}" title="#{bundle.CreateCasetransTitle_transaccount}" />
+                    <h:outputLabel value="#{bundle.CreateCasetransLabel_cases}" for="cases" />
+                    <h:inputText id="cases" value="#{casetransController.selected.cases}" title="#{bundle.CreateCasetransTitle_cases}" />
+                    <h:outputLabel value="#{bundle.CreateCasetransLabel_timestamp2}" for="timestamp2" />
+                    <h:inputText id="timestamp2" value="#{casetransController.selected.timestamp2}" title="#{bundle.CreateCasetransTitle_timestamp2}" >
+                        <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                    </h:inputText>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{casetransController.create}" value="#{bundle.CreateCasetransSaveLink}" />
+                <br />
+                <br />
+                <h:commandLink action="#{casetransController.prepareList}" value="#{bundle.CreateCasetransShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.CreateCasetransIndexLink}"/>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

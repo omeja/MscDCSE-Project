@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ViewTasksTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputText value="#{bundle.ViewTasksLabel_taskCode}"/>
+                    <h:outputText value="#{tasksController.selected.taskCode}" title="#{bundle.ViewTasksTitle_taskCode}"/>
+                    <h:outputText value="#{bundle.ViewTasksLabel_taskName}"/>
+                    <h:outputText value="#{tasksController.selected.taskName}" title="#{bundle.ViewTasksTitle_taskName}"/>
+                    <h:outputText value="#{bundle.ViewTasksLabel_status}"/>
+                    <h:outputText value="#{tasksController.selected.status}" title="#{bundle.ViewTasksTitle_status}"/>
+                    <h:outputText value="#{bundle.ViewTasksLabel_contractcode}"/>
+                    <h:outputText value="#{tasksController.selected.contractcode}" title="#{bundle.ViewTasksTitle_contractcode}"/>
+                    <h:outputText value="#{bundle.ViewTasksLabel_casecode}"/>
+                    <h:outputText value="#{tasksController.selected.casecode}" title="#{bundle.ViewTasksTitle_casecode}"/>
+                    <h:outputText value="#{bundle.ViewTasksLabel_timestamp10}"/>
+                    <h:outputText value="#{tasksController.selected.timestamp10}" title="#{bundle.ViewTasksTitle_timestamp10}">
+                        <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                    </h:outputText>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{tasksController.destroyAndView}" value="#{bundle.ViewTasksDestroyLink}"/>
+                <br />
+                <br />
+                <h:link outcome="Edit" value="#{bundle.ViewTasksEditLink}"/>
+                <br />
+                <h:commandLink action="#{tasksController.prepareCreate}" value="#{bundle.ViewTasksCreateLink}" />
+                <br />
+                <h:commandLink action="#{tasksController.prepareList}" value="#{bundle.ViewTasksShowAllLink}"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.ViewTasksIndexLink}"/>
+
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

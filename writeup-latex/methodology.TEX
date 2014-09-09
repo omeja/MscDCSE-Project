@@ -1,0 +1,362 @@
+\input setbmp
+\section{CHAPTER THREE: Methodology}
+
+\noindent In this chapter, the methods used to acomplish the project are discussed. Section 3.1 explains how requirements analysis was performed to identify the key stakeholders and determine the functional and non functional requirements for the investigation tool. The tool's design is discussed in section 3.2 along with UML representations of the data and process flows. Section 3.3 discusses the implementation methods used while section 3.4 presents testing and evaluation procedures used to assess the system functionality.
+
+\subsection{Requirements Gathering}
+\subsubsection{Interviews}
+\noindent Interviews were conducted with investigative officers at Police headquarters, Jinja Road Police station and the Special Investigation Unit, Kireka. This was carried out to ascertain the nature of financial crime cases, the investigation processes involved and the criteria used to zero down on a suspect. Telephone interviews were also conducted in situations where physical access was challenging.A total of nine officers were interviewed who included the Director of Research at Police Headquarters(Deputy IGP),IT Manager,IT officers,CID(Criminal Investigations Department) Officers (2) (Police Headquaters),CID officer(Special Unit of Investigations,Kireka),CID officer(Kibuli) and two(2) CID officers at Jinja Road Eastern Region CID offices. 
+
+The questions asked were related to the following:-
+\begin{enumerate}[(i)]
+\item Type of evidence gathered and used in such investigations.
+\item The patterns which are common in most cases and which the system will base upon.
+\item Any existing systems used for crime investigation and formats of existing crime records.
+ \end{enumerate}
+
+\noindent A detailed list of  interview questions asked and a request for permission form are attached in  Appendix B and Appendix A respectively.
+
+\subsubsection{Existing Literature}
+
+\noindent Existing literature on Complex Event Processing was consulted to determine the best design approach for the project and to discover the benefits of using the CEP model.Implementations of the Esper engine in particular were studied to provide a benchmark for the project implementation.
+
+\noindent The Annual Police report was also consulted to acquire an in depth understanding of the impact of crimes to society and government. Case statements some handwritten were also analyzed and these provided guidance on data to capture and track in the system.
+
+
+\subsubsection{Use Case}
+
+\noindent This was designed based on requirements gathered during the interview sessions held with police investigators and administrators. The figure below shows user and system interactions.
+
+
+
+\begin{center}
+\begin{figure}[h]
+\centerbmp{8cm}{4cm}{usecase1.bmp}
+\caption{Police Officer Use Case}
+
+\end{figure}
+\end{center}
+
+
+\subsection{System Design}
+
+\noindent This section describes the system environment, interactions, requirements, architecture and input/output formats as well as processing logic. The system was modeled using UML (Unified Modeling Language) tools based on the object oriented design approach.
+
+\subsubsection{Design Overview}
+
+\noindent The design includes an existing System/Database that receives instructions from the Application GUI to extract data  and sends the data to  a CEP engine running which processes the data displays information back  to the user.
+
+\begin{center}
+\begin{figure}[h]
+\centerbmp{10cm}{7cm}{design1.bmp}
+\caption{Design Overview}
+
+\end{figure}
+\end{center}
+
+\subsubsection{Logical Design}
+
+\noindent The main entities in the logical design  are listed below and their associations are shown in the figure.
+
+\begin{enumerate}[(i)]
+\item Investigator/Police Officer : The main actor.
+\item Application: The tool  the investigator interacts with.
+\item CEP engine : Initialized by the application.
+\item Information: Processed data returned by the engine listeners.
+\item Input Data: Data sent to the CEP Engine from the database.
+ 
+
+ \end{enumerate}
+
+\begin{center}
+\begin{figure}[h]
+\centerbmp{12cm}{7cm}{logicaldesign.bmp}
+\caption{Logical Design}
+
+\end{figure}
+\end{center}
+\newpage
+\subsubsection{Application Architectural Overview}
+
+
+\begin{center}
+\begin{figure}[h]
+\centerbmp{12cm}{7cm}{eda.bmp}
+\caption{Application Architecture}
+
+\end{figure}
+\end{center}
+
+\subsubsection{Data Flow Diagram}
+
+\noindent The process was designed to start from the web client (user) making a request for records from an existing database. The returned data is sent to the processing engine and checked against the defined pattern. Based on the computation a response is displayed to the client in form of matching events and match percentages.
+
+\begin{center}
+\begin{figure}[h]
+\centerbmp{6cm}{6cm}{dfd.bmp}
+\caption{Data flow Diagram}
+
+\end{figure}
+\end{center}
+
+\subsection{Implementation}
+
+\noindent The tool was developed as a web-based application to enable access by users throughout the Police network and to provide capabilities for access by mobile devices as well. Other reasons for choosing a web application include; OS platform independence, ease of maintenance and limited upgrades from the client side. It was built on the Java EE platform using the glassfish application server and the JSF 2.1 framework \cite{twentythree}.
+
+
+\subsubsection{Tools and Platforms}
+
+\noindent The investigation tool was developed using a range of tools and platforms  reflecting  the MVC(Model View Controller) paradigm  to achieve efficiency and easy management. Some of tools used are;
+
+\begin{enumerate}[(i)]
+\item Netbeans IDE 7.3.1/JSF 2.2 Framework/Java
+\item MySQL WorkBench 5.2
+\item PrimeFaces 3.5 library
+\item Esper Engine 4.8.0 library
+\item GlassFish Server 3
+ 
+
+ \end{enumerate}
+
+
+\subsection{Using the Java Persistence API  to Generate Events}
+
+\noindent The JPA \cite{twentythree} enables the mapping of Java objects to relational databases by creating Entity classes whose properties map directly to the fields in the underlying database. The JPA also provides a query language that  enables definitions of queries for the entities and their states.JPA enables better application performance given that unlike earlier implementations like Entity Beans , it does not  keep the data in memory and avoids constant synchronization with the database data.
+
+\noindent Facelets \cite{twentythree} is the presentation technology used with JSF based applications which replaced JavaServer Pages (JSP) given the inability of JSP to  support all features of the JSF specification. It is  constructed using HTML style templates and uses XHTML to create web pages also providing support for the Expression Language and templating for pages an components.Facelets reduce on coding time by enabling code reuse, faster compilation time , high performance rendering, compile-time EL validation and extensibility of components.The Expression Language is the interface between the webpage/facelet and the managed beans. through simple expressions, data can dynamically be read from or written to the bean components.
+
+\noindent Crime events were generated using the JPA API  and its query language to return data matching a given select statement which included a WHERE clause containing the Case File Number. The Case File Number is received from the Facelet(JSF) page (XHTML) initiated by the user and using the Expression Language \cite{twentythree} is linked to a Managed Bean \cite{twentythree} containing the Entity Manager instance. 
+
+\noindent A Managed Bean is a POJO class that contains application logic with values accessible through defined methods or getter methods . It contains the @ManagedBean annotation that declares the class as a managed bean. These values can then be accessed using the Expression Language.
+
+\noindent An Entity Class is an ordinary POJO class annotated by @Entity to enable the class represent objects in a database. It contains properties with data types similar to the fields in the matching  database table. Named queries can be defined outside the class for later access.
+
+\noindent The Managed Bean then interacts with an Entity Class which queries the database and returns values to the bean . These values are written as CSV format files to the application class path  ready to be sent to the engine for processing.The figure below shows a sample  JPA query to extract data.
+
+
+
+
+%\newpage
+
+
+\begin{center}
+\begin{figure}[h]
+\centerbmp{14cm}{8cm}{code11.png}
+\caption{Sample JPA Query }
+
+\end{figure}
+\end{center}
+
+\subsection{Processing Events using Esper}
+
+\noindent Esper is an engine developed by Codehaus \cite{twentyfive} to enable  event series analysis and Complex Event Processing. The Esper Engine is an implementation of the Complex Event Processing which is a foundational technology for detecting and managing the events that happen in event driven enterprises. In CEP low-level events combine to produce a complex event and these events are normally detected in realtime by the processing engines. 
+\newpage
+
+\begin{center}
+\begin{figure}[h]
+\centerbmp{14cm}{8cm}{esper.png}
+\caption{Esper Architecture\cite{twentyfive}}
+
+\end{figure}
+\end{center}
+ 
+
+\noindent The Esper Engine uses the EPL(Event Processing Language) to define statements stored in the engine. EPL queries are created and stored in the engine, and publish results to listeners as events are received by the engine or timer events occur that match the criteria specified in the query. Events can also be obtained from running EPL queries via the safeIterator and iterator methods that provide a pull-data API.The select clause in an EPL query specifies the event properties or events to retrieve. The from clause in an EPL query specifies the event stream  definitions and stream names to use. The where clause in an EPL query specifies search conditions that specify which event or event combination to search for \cite{twentyfive}.
+
+\noindent EPL queries can be simple queries or more complex queries.A simple select contains only a select  clause and a single stream definition. Complex EPL queries can be built to feature a more elaborate select list utilizing expressions, may join multiple streams, may contain a where clause with search conditions and so on \cite{twentyfive}.Below is the syntax/BNF for the EPL language used by the Esper engine.
+
+\begin{center}
+\begin{figure}[h]
+\centerbmp{10cm}{8cm}{bnf2.png}
+\caption{BNF for Esper Engine \cite{twentyfive}}
+
+\end{figure}
+\end{center}
+
+\noindent The Esper engine \cite{twentyfive} uses indexes, a data structure that improves the speed of data retrieval operations. For sorted access it may prefer a binary tree index while a hash-based index is great for key lookups.For efficient matching of incoming events to statements the engine uses inverted indexes.Multi-version concurrency control is a concept used for variables and also for filters to allow concurrency and reduce locking.The match-recognize pattern matching functionality is built using nondeterministic finite automata (NFA).Query planning based on the analysis of expressions used in the where-clause is another technique used by the engine. The execution strategy may choose nested-loops versus merge joins \cite{twentyfive}.
+
+\noindent Indexes improve the speed of data retrieval operations.Indexes generally are stored on physical disks or in memory and contain pointers to rows of data \cite{twentyfive}. Different types of indexes are used for sorted access ,key lookups  and matching of incoming events to statements as explained in the following section . In terms of the query execution strategy the nested-loops are prefered to the merge join algorithm.
+
+\subsubsection{Binary Tree Index Algorithm in Esper}
+
+\noindent  Binary tree indexes are used for sorted access and have one root element with one or more nodes.  This algorithm works more like the Binary Search Tree algorithm which also contains nodes, each with a left pointer and right pointer along with a data element as shown in the figure below.
+
+\begin{center}
+\begin{figure}[h]
+\centerbmp{14cm}{8cm}{binary.png}
+\caption{Binary Tree Index\cite{twentyeight}}
+
+\end{figure}
+\end{center}
+
+\noindent The nodes contain links that point to other nodes or are null with each node having a key/value pair. The search key value is compared to each of the values in the nodes traversed and a value is returned if the key is matched whereas  a null is returned if after several iterations no match is found \cite{twentyeight}.
+\newpage
+
+\begin{center}
+\begin{figure}[h]
+\centerbmp{14cm}{8cm}{psuedobst.png}
+\caption{Pseudo-Code for Binary Search Tree Algorithm \cite{thirty}}
+
+\end{figure}
+\end{center}
+
+\subsubsection{Hash-Based Index Algorithm in Esper}
+
+\noindent Hash-based indexes are prefered by the Esper Engine for key lookups.A hash table \cite{twentyeight} associates keys with values and used primarily to efficiently the corresponding value of a key. This is done by applying a hash function to the key, changing it to a hash which then determines the desired location, sometimes referred to as a bucket.
+\newpage
+\begin{center}
+\begin{figure}[h]
+\centerbmp{14cm}{8cm}{hash.png}
+\caption{Hash-Based Indexes\cite{twentyeight}}
+
+\end{figure}
+\end{center}
+
+\begin{center}
+\begin{figure}[h]
+\centerbmp{14cm}{8cm}{pshash.png}
+\caption{Pseudo-Code for Hash Table Algorithm \cite{thirtyone}}
+
+\end{figure}
+\end{center}
+\newpage
+
+\subsubsection{Inverted Index Algorithms in Esper}
+
+\noindent Inverted indexes are used for efficient matching of incoming events to the defined statements in the engine.Inverted indexing involves searching for an element based on its occurrence or number  of occurrences as opposed to directly accessing an element by its position in an array(forward indexing).
+
+\noindent In the search part of an inverted index, the word which is queried by the user is passed as input along with the hash map which has the set of all positions of the each word in the document. A Hash Map takes the word as its index and returns the value stored in that index \cite{twentyeight}.
+
+\noindent In the first part of the algorithm below, the input consists of Document Ids(Keys) paired with actual content(values). Documents are processed in parallel with each document analyzed and broken down into components.Depending on the application and type of document it is processed differently (for HTML documents, tags are removed). In line 4 and 5 term frequencies are computed by iteration through all the terms storing the counts in the process. A document Id and term frequency pair is created for each term(n,H[t]) and the mapper emits the key -value pair with the term as the key and the posting as the value in line 7.In the second part of the pseudo-code(Class REDUCER), the postings are grouped by term and all the postings are written to the disk \cite{thirtytwo}.
+
+
+\begin{center}
+\begin{figure}[h]
+\centerbmp{14cm}{8cm}{psinverted.png}
+\caption{Pseudo-Code for Inverted Indexes \cite{thirtytwo}}
+
+\end{figure}
+\end{center}
+%\newpage
+
+\subsubsection{Nested Loop Algorithms in Esper}
+
+\noindent The execution algorithm used in the Esper Engine is based on nested loops. Nested loop join operations are very simple in their operation that follows the definition of the join operation. The relations being formed are designated as the inner relation and the outer relation respectively. For each tuple of the outer relation all tuples  of the inner relation are read and compared with the tuple from the outer relation. Upon satisfaction of the join operation, the two tuples are concatenated and placed in the output buffer.
+\newpage
+
+\begin{center}
+\begin{figure}[h]
+\centerbmp{14cm}{8cm}{exec.png}
+\caption{Nested Loop Algorithm\cite{twentynine}}
+
+\end{figure}
+\end{center}
+
+\noindent The Theta operator defines the condition that must hold true between the attributes r(a) and s(b) of relations R and S respectively.
+
+\noindent For efficiency, the relation with higher cardinality is made the inner relation. Nested loops save some I/O overhead because the last page of the inner relation which is retrieved in one loop is also used in the next loop. This means that less time is spent processing the inner loop since the relation with the lower cardinality is selected as the outer relation. The algorithm is more efficient if the attributes are accessed via indexes but has a downside of being unsuitable for joining very large relations due to the extensive matching performed.
+
+
+\subsubsection{Defining Event Objects}
+
+\noindent An event is an immutable record of a past occurence of an action or state change.Event properties  in the Esper engine capture the state information for an event \cite{twentyfive}.
+The Esper engine supports a variety representations for like using Java POJO (Plain Old Java Objects) objects (using the java.lang.object class), map events (java.util.map), object array events, XML  Document Object Model (DOM) and others.
+
+\noindent For this project, Java POJO classes were created for each of the  five events represented (Funds Request , Email Confirmation , Phone Confirmation , Funds Release and Payments) and the required fields were defined for each class with both getter and setter methods as in the figure below.
+
+\begin{center}
+\begin{figure}[h]
+\centerbmp{14cm}{8cm}{pojo.png}
+\caption{Sample POJO class for Funds Request Event}
+
+\end{figure}
+\end{center}
+
+\subsubsection{Configuring the Esper Engine}
+
+\noindent In order to use the Esper engine, all configuration parameters have to be initialized in the main class (Managed Bean). This setup ensures that all the event classes created are registered as event types to be processed by the engine and that the EPServiceProvider class which is the administration and runtime interface for the engine instance is created.
+
+\noindent Hash Map objects are then created for each class to store all the properties/fields and the classes are represented as events by adding them to the configuration instance. As a rule, the field names used in the map objects are exactly identical to the field names in the classes and also same as the column headers of the incoming CSV format files saved in the project classpath.
+
+\begin{center}
+\begin{figure}[h]
+\centerbmp{8cm}{8cm}{config.png}
+\caption{Esper Configuration in the Main Class}
+
+\end{figure}
+\end{center}
+
+
+\subsubsection{Defining Query Statements and Listeners }
+
+\noindent In order to detect events using the Esper engine, rules were defined using the Event Processing Language (EPL) which looks very much like the conventional SQL query language. The select statement queries a class that is mapped to an incoming CSV file with the required conditions.Using the CSVAdapter  class from the Esper \cite{twentyfive} library, CSV files are read from the class path sent to the engine for processing .The fields in the CSV files are mapped to POJO classes for each of the entities being  analyzed using Hash Map configurations. The processing is based upon SQL-like statements defines using the Event Processing Language (EPL ) \cite{four} as shown in sample below.
+
+\begin{center}
+\begin{figure}[h]
+\centerbmp{14cm}{4cm}{code2.png}
+\caption{Sample EPL Query Statement }
+
+\end{figure}
+\end{center}
+
+\noindent The EPstatement class in an Esper class that creates and stores the query statement which is then added to an instance of the Esper listener class. The AdapterInputSource class i s used to instantiate the event classes using incoming CSV files.
+
+
+\noindent Listeners are then defined  to store records  matching the defined pattern or  to hold returned results from the EPL queries. These are then written to text files in a local location on the server.EPL statements and event patterns publish old data and new data to registered listeners. The listener classes extend the Esper CEPListener class and receive the processed results represented as Event Bean objects only displaying the latest/new events produced by the engine \cite{twentyfive}. 
+
+\begin{center}
+\begin{figure}[h]
+\centerbmp{8cm}{4cm}{statement2.png}
+\caption{Sample CSV File Mappings and Listener Class }
+
+\end{figure}
+\end{center}
+
+
+\subsubsection{System Reports}
+
+\noindent Events processed by the engine are read from the text files periodically and displayed to a client XHTML web page using the Expression Language (EL) \cite{twentythree} which interacts with the JSF \cite{twentythree}  managed bean to return computed results. The EL allows page authors to use simple expressions to dynamically access data from JavaBeans components. 
+
+\noindent The PrimeFaces library \cite{twentyfour} was used to provide a look and feel to the interface. PrimeFaces is a lightweight library that hides complexities from user while providing extended capabilities to the default XHTML controls as well as quick software development. Records matching the pattern are displayed in tabular format along with the percentage matching rate. 
+
+\noindent A managed bean class is defined that reads the contents of the file and is mapped to the JSF PrimeFaces library controls by another POJO class. The file contents are stored as List objects which are then exposed as getter methods which are then mapped to the the table controls in PrimeFaces as in the sample below and displayed to the web and mobile pages.
+
+\begin{center}
+\begin{figure}[h]
+\centerbmp{10cm}{6cm}{code5.bmp}
+\caption{Sample Facelet code}
+
+\end{figure}
+\end{center}
+
+\subsubsection{Prototyping}
+
+\noindent A prototype was developed for the crime investigation tool based on the specification requirements document and the main interface is shown below.
+
+
+\begin{center}
+\begin{figure}[h]
+\centerbmp{14cm}{7cm}{prototype.bmp}
+\caption{Krimino Tool Prototype}
+
+\end{figure}
+\end{center}
+
+\noindent The above interface contains controls for the user to customize the pattern and launch the processing and display processes.
+
+\subsection{System Testing and Evaluation}
+
+\noindent The tool was tested by two crime investigators and the developer using the below checklist.
+
+\begin{enumerate}[(i)]
+\item Events generation from the database
+\item Event processing by the Esper Engine
+\item Proper display of results to web , mobile interfaces and in PDF format.
+\item Launching and Exiting the application.
+ \end{enumerate}
+
+
+
+
+
+

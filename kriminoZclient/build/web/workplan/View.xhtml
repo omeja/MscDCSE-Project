@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ViewWorkplanTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputText value="#{bundle.ViewWorkplanLabel_workPlanCode}"/>
+                    <h:outputText value="#{workplanController.selected.workPlanCode}" title="#{bundle.ViewWorkplanTitle_workPlanCode}"/>
+                    <h:outputText value="#{bundle.ViewWorkplanLabel_amount}"/>
+                    <h:outputText value="#{workplanController.selected.amount}" title="#{bundle.ViewWorkplanTitle_amount}"/>
+                    <h:outputText value="#{bundle.ViewWorkplanLabel_description}"/>
+                    <h:outputText value="#{workplanController.selected.description}" title="#{bundle.ViewWorkplanTitle_description}"/>
+                    <h:outputText value="#{bundle.ViewWorkplanLabel_startDate}"/>
+                    <h:outputText value="#{workplanController.selected.startDate}" title="#{bundle.ViewWorkplanTitle_startDate}">
+                        <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                    </h:outputText>
+                    <h:outputText value="#{bundle.ViewWorkplanLabel_endDate}"/>
+                    <h:outputText value="#{workplanController.selected.endDate}" title="#{bundle.ViewWorkplanTitle_endDate}">
+                        <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                    </h:outputText>
+                    <h:outputText value="#{bundle.ViewWorkplanLabel_entitycd}"/>
+                    <h:outputText value="#{workplanController.selected.entitycd}" title="#{bundle.ViewWorkplanTitle_entitycd}"/>
+                    <h:outputText value="#{bundle.ViewWorkplanLabel_casecode}"/>
+                    <h:outputText value="#{workplanController.selected.casecode}" title="#{bundle.ViewWorkplanTitle_casecode}"/>
+                    <h:outputText value="#{bundle.ViewWorkplanLabel_timestamp8}"/>
+                    <h:outputText value="#{workplanController.selected.timestamp8}" title="#{bundle.ViewWorkplanTitle_timestamp8}">
+                        <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                    </h:outputText>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{workplanController.destroyAndView}" value="#{bundle.ViewWorkplanDestroyLink}"/>
+                <br />
+                <br />
+                <h:link outcome="Edit" value="#{bundle.ViewWorkplanEditLink}"/>
+                <br />
+                <h:commandLink action="#{workplanController.prepareCreate}" value="#{bundle.ViewWorkplanCreateLink}" />
+                <br />
+                <h:commandLink action="#{workplanController.prepareList}" value="#{bundle.ViewWorkplanShowAllLink}"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.ViewWorkplanIndexLink}"/>
+
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

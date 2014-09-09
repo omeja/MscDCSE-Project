@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.CreatePhonelogsTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.CreatePhonelogsLabel_caseCode}" for="caseCode" />
+                    <h:selectOneMenu id="caseCode" value="#{phonelogsController.selected.caseCode}" title="#{bundle.CreatePhonelogsTitle_caseCode}" >
+                        <f:selectItems value="#{casesController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                    <h:outputLabel value="#{bundle.CreatePhonelogsLabel_callId}" for="callId" />
+                    <h:inputText id="callId" value="#{phonelogsController.selected.callId}" title="#{bundle.CreatePhonelogsTitle_callId}" required="true" requiredMessage="#{bundle.CreatePhonelogsRequiredMessage_callId}"/>
+                    <h:outputLabel value="#{bundle.CreatePhonelogsLabel_callDate}" for="callDate" />
+                    <h:inputText id="callDate" value="#{phonelogsController.selected.callDate}" title="#{bundle.CreatePhonelogsTitle_callDate}" >
+                        <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                    </h:inputText>
+                    <h:outputLabel value="#{bundle.CreatePhonelogsLabel_fromNo}" for="fromNo" />
+                    <h:inputText id="fromNo" value="#{phonelogsController.selected.fromNo}" title="#{bundle.CreatePhonelogsTitle_fromNo}" />
+                    <h:outputLabel value="#{bundle.CreatePhonelogsLabel_toNo}" for="toNo" />
+                    <h:inputText id="toNo" value="#{phonelogsController.selected.toNo}" title="#{bundle.CreatePhonelogsTitle_toNo}" />
+                    <h:outputLabel value="#{bundle.CreatePhonelogsLabel_cases}" for="cases" />
+                    <h:inputText id="cases" value="#{phonelogsController.selected.cases}" title="#{bundle.CreatePhonelogsTitle_cases}" />
+                    <h:outputLabel value="#{bundle.CreatePhonelogsLabel_requestID}" for="requestID" />
+                    <h:selectOneMenu id="requestID" value="#{phonelogsController.selected.requestID}" title="#{bundle.CreatePhonelogsTitle_requestID}" >
+                        <f:selectItems value="#{requestController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                    <h:outputLabel value="#{bundle.CreatePhonelogsLabel_timestamp1}" for="timestamp1" />
+                    <h:inputText id="timestamp1" value="#{phonelogsController.selected.timestamp1}" title="#{bundle.CreatePhonelogsTitle_timestamp1}" >
+                        <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                    </h:inputText>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{phonelogsController.create}" value="#{bundle.CreatePhonelogsSaveLink}" />
+                <br />
+                <br />
+                <h:commandLink action="#{phonelogsController.prepareList}" value="#{bundle.CreatePhonelogsShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.CreatePhonelogsIndexLink}"/>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

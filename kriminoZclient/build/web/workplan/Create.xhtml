@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.CreateWorkplanTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.CreateWorkplanLabel_workPlanCode}" for="workPlanCode" />
+                    <h:inputText id="workPlanCode" value="#{workplanController.selected.workPlanCode}" title="#{bundle.CreateWorkplanTitle_workPlanCode}" required="true" requiredMessage="#{bundle.CreateWorkplanRequiredMessage_workPlanCode}"/>
+                    <h:outputLabel value="#{bundle.CreateWorkplanLabel_amount}" for="amount" />
+                    <h:inputText id="amount" value="#{workplanController.selected.amount}" title="#{bundle.CreateWorkplanTitle_amount}" />
+                    <h:outputLabel value="#{bundle.CreateWorkplanLabel_description}" for="description" />
+                    <h:inputText id="description" value="#{workplanController.selected.description}" title="#{bundle.CreateWorkplanTitle_description}" />
+                    <h:outputLabel value="#{bundle.CreateWorkplanLabel_startDate}" for="startDate" />
+                    <h:inputText id="startDate" value="#{workplanController.selected.startDate}" title="#{bundle.CreateWorkplanTitle_startDate}" >
+                        <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                    </h:inputText>
+                    <h:outputLabel value="#{bundle.CreateWorkplanLabel_endDate}" for="endDate" />
+                    <h:inputText id="endDate" value="#{workplanController.selected.endDate}" title="#{bundle.CreateWorkplanTitle_endDate}" >
+                        <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                    </h:inputText>
+                    <h:outputLabel value="#{bundle.CreateWorkplanLabel_entitycd}" for="entitycd" />
+                    <h:selectOneMenu id="entitycd" value="#{workplanController.selected.entitycd}" title="#{bundle.CreateWorkplanTitle_entitycd}" >
+                        <f:selectItems value="#{entitiesController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                    <h:outputLabel value="#{bundle.CreateWorkplanLabel_casecode}" for="casecode" />
+                    <h:selectOneMenu id="casecode" value="#{workplanController.selected.casecode}" title="#{bundle.CreateWorkplanTitle_casecode}" >
+                        <f:selectItems value="#{casesController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                    <h:outputLabel value="#{bundle.CreateWorkplanLabel_timestamp8}" for="timestamp8" />
+                    <h:inputText id="timestamp8" value="#{workplanController.selected.timestamp8}" title="#{bundle.CreateWorkplanTitle_timestamp8}" >
+                        <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                    </h:inputText>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{workplanController.create}" value="#{bundle.CreateWorkplanSaveLink}" />
+                <br />
+                <br />
+                <h:commandLink action="#{workplanController.prepareList}" value="#{bundle.CreateWorkplanShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.CreateWorkplanIndexLink}"/>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

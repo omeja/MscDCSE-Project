@@ -1,0 +1,182 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://java.sun.com/jsf/core"
+      >
+
+    <body>
+
+        <ui:composition template="./WEB-INF/krimino-template/krimino-template.xhtml" >
+
+            <ui:define name="content">
+
+
+                <h:form >
+                    <b>
+                    <h:outputText value="          [ Add Cases for Processing ]" style="color: #000">            </h:outputText>
+                    </b>
+                           <br></br>
+                    <h:panelGrid columns="6"> 
+                         <h:outputText value="Case Number:">            </h:outputText>
+                         <h:inputText value="#{mainBean.csno}" title ="cn" id="cn" required="false"/>
+                        <h:commandButton action="test" value="Add Case" />
+                     <h:commandButton action="reset" value="Reset/Clear Case" />
+
+                    </h:panelGrid>
+                  
+                             <br></br>
+                           <b>
+                    <h:outputText value=" [ Input Parameters to Query Events ]" style="color: #000000 ">            </h:outputText>
+                           </b>
+                    <br></br>
+                      <br></br>
+                      <h:outputText value= "1. Funds Request Event(Request from Ministry) " style="color: #090">      </h:outputText>
+                       <br></br>
+                       <br></br>
+                    <h:panelGrid columns="6"> 
+                      
+                         <br></br>
+                        <h:outputText value= "(User Authorization Level) ">      </h:outputText>
+                        <h:selectOneMenu value="#{mainBean.suserlev}" id="s1" >
+                            <f:selectItem itemLabel="Select One" itemValue="Equal To" />
+<!--                            <f:selectItem itemLabel="Not Equal To" itemValue="Not Equal To"/>-->
+                            <f:selectItem itemLabel="Equal To" itemValue="Equal To"/>
+                        </h:selectOneMenu>
+                        
+                        <h:selectOneMenu  value="#{mainBean.userlev}" id="s2">
+                            <f:selectItem itemLabel="Select One" itemValue="SENIOR-LEVEL" />
+                            <f:selectItem itemLabel="SENIOR-LEVEL" itemValue="SENIOR-LEVEL" />
+                            <f:selectItem itemLabel="MID-LEVEL" itemValue="MID-LEVEL"/>
+                        </h:selectOneMenu>
+
+                      
+                    </h:panelGrid>
+                    <br></br>
+                  
+                    <h:panelGrid columns="6"> 
+                        <h:outputText value= "(WorkPlan Availability)">      </h:outputText>
+
+                        <h:selectOneMenu  value="#{mainBean.swp1}" id="s3">
+                            <f:selectItem itemLabel="Select One" itemValue="EqualTo" />
+                            <f:selectItem itemLabel="Not Equal To" itemValue="NotEqualTo"/>
+                            <f:selectItem itemLabel="Equal To" itemValue="EqualTo"/>
+                        </h:selectOneMenu>
+
+                        <h:inputText value="#{mainBean.wp1}" title ="bgamt" id="bgamt" required="false"/>
+                    </h:panelGrid>
+                    <br></br>
+                     <h:outputText value= "2. Bank Of Uganda - Funds Release Event " style="color: #090">      </h:outputText>
+                     <br></br>
+                     <br></br>
+                    <h:panelGrid columns="6"> 
+                       
+                         <br></br>
+                        <h:outputText value= "(Account Status) ">      </h:outputText>
+
+                        <h:selectOneMenu  value="#{mainBean.saccstat}" id="s4" >
+                            <f:selectItem itemLabel="Select One" itemValue="EqualTo" />
+                            <f:selectItem itemLabel="Equal To" itemValue="EqualTo"/>
+                        </h:selectOneMenu>
+
+                        <h:selectOneMenu value="#{mainBean.accstat}" id="s5"  >
+
+                            <f:selectItem itemLabel="DORMANT" itemValue="DORMANT" />
+                            <f:selectItem itemLabel="ACTIVE" itemValue="ACTIVE"/>
+
+                        </h:selectOneMenu>
+                    </h:panelGrid>
+                    <br></br>
+                    <h:panelGrid columns="6"> 
+                        <h:outputText value= "Check Limits Exceeded - (Transfered Amount): ">      </h:outputText>
+                        <h:outputText value= "Transfer Amount">      </h:outputText>
+                        <h:selectOneMenu value="#{mainBean.limsymb}" id="s6"  >
+                            <f:selectItem itemLabel="Pick One" itemValue="GreaterThan" />
+                            <f:selectItem itemLabel="Greater Than" itemValue="GreaterThan" />
+                            <f:selectItem itemLabel="Less Than" itemValue="LessThan"/>
+                            <f:selectItem itemLabel="Equal To" itemValue="EqualTo"/>
+                        </h:selectOneMenu>
+                        <h:outputText value= "Set Limit">      </h:outputText>
+
+                    </h:panelGrid>
+            
+                    <br></br>
+                      <h:outputText value= "3. Payments (To Suppliers/Contractors)Event" style="color: #090">      </h:outputText>
+                      <br></br>
+                      <br></br>
+                    <h:panelGrid columns="6"> 
+                       
+                          <br></br>
+                        <h:outputText value= "(Transfered Amount)">      </h:outputText>
+
+                        <h:selectOneMenu  value="#{mainBean.tfsymb}" id="s7" >
+                            <f:selectItem itemLabel="Pick One" itemValue="GreaterThan" />
+                            <f:selectItem itemLabel="Greater Than" itemValue="GreaterThan" />
+                            <f:selectItem itemLabel="Less Than" itemValue="LessThan"/>
+                            <f:selectItem itemLabel="Equal To" itemValue="EqualTo"/>
+                        </h:selectOneMenu>
+                        <h:outputText value= "Contract Amount">      </h:outputText>
+
+                    </h:panelGrid>
+                    <br></br>
+                    <h:panelGrid columns="6"> 
+                        <h:outputText value= " (Project Status)">      </h:outputText>
+
+                        <h:selectOneMenu  value="#{mainBean.statsymb}" id="s8" >
+                            <f:selectItem itemLabel="Equal To" itemValue="EqualTo"/>
+                        </h:selectOneMenu>
+                        <h:selectOneMenu  value="#{mainBean.status}" id="s9" >
+                            <f:selectItem itemLabel="Pick One" itemValue="PENDING" />
+                            <f:selectItem itemLabel="PENDING" itemValue="PENDING" />
+                            <f:selectItem itemLabel="COMPLETED" itemValue="COMPLETED"/>
+
+                        </h:selectOneMenu>
+
+                    </h:panelGrid>
+                    <br></br>
+                    <h:outputText value= "4. Phone Call Logs Event " style="color: #090">      </h:outputText>
+                    <br></br>
+                    <br></br>
+                    <h:panelGrid columns="6"> 
+                         
+                          <br></br>
+                        <h:outputText value= "(Check Confirmation for Requests): ">      </h:outputText>
+                        <h:outputText value= "Request File Number: ">      </h:outputText>
+                        <h:selectOneMenu value="#{mainBean.reqsymb}" id="s10">
+                            <f:selectItem itemLabel="Pick One" itemValue="EqualTo" />
+
+                            <f:selectItem itemLabel="Equal To" itemValue="EqualTo"/>
+                        </h:selectOneMenu>
+
+                        <h:inputText value="#{mainBean.request}" title ="File Number" id="s11" required="false" />
+                    </h:panelGrid>
+                    <br></br>
+                    <h:outputText value= "5. Email Logs Event "  style="color: #090">      </h:outputText>
+                    <br></br>
+                    <br></br>
+                    <h:panelGrid columns="6"> 
+                        
+                         <br></br>
+                        <h:outputText value= "(Check Confirmation from Treasury for Funds Request): ">      </h:outputText>
+                        <h:outputText value= "Request File Number: ">      </h:outputText>
+                        <h:selectOneMenu value="#{mainBean.reqsymb2}" id="s12">
+                            <f:selectItem itemLabel="Pick One" itemValue="EqualTo" />
+                            <f:selectItem itemLabel="Equal To" itemValue="EqualTo"/>
+                        </h:selectOneMenu>
+                        <h:inputText value="#{mainBean.request2}" title ="File Number" id="s13" required="false"/>
+
+                    </h:panelGrid>
+                    <br></br>
+                    <h:commandButton action="show" value="Process Events/Run Engine" style="color: #900" />
+                </h:form>
+
+            </ui:define>
+
+
+
+        </ui:composition>
+
+    </body>
+</html>

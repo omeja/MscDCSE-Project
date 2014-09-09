@@ -1,0 +1,20 @@
+This is TeX, Version 3.14159 (Web2c 7.3.3.1) (format=LATEX 2003.8.21)  25 APR 2014 12:21
+**&LATEX appendices.TEX
+(./appendices.TEX
+LaTeX2e <2001/06/01>
+Babel <v3.7h> and hyphenation patterns for american, loaded.
+(c:/Program Files (x86)/PCTeX/PCTeXv5/texmf-pti/tex/tex/legacy/setbmp.tex)
+! Undefined control sequence.
+l.3 \section
+             {Appendices}
+? e
+ 
+Here is how much of TeX's memory you used:
+ 11 strings out of 10878
+ 285 string characters out of 70979
+ 1044422 words of memory out of 1263001
+ 3023 multiletter control sequences out of 10000+0
+ 3640 words of font info for 14 fonts, out of 200000 for 1000
+ 14 hyphenation exceptions out of 1000
+ 5i,0n,3p,104b,7s stack positions out of 300i,100n,500p,200000b,4000s
+No pages of output.

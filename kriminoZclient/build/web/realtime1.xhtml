@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+
+    <body>
+        <ui:composition template="./WEB-INF/krimino-template/krimino-template.xhtml">
+            <ui:define name="content">
+                <h:form>
+
+                    <h:outputText value="RealTime Monitoring" style="-moz-box-align: center"/>
+                    <br></br>
+                      <h:outputText value="================" style="-moz-box-align: center"/>
+                   
+                    <br></br>
+
+                    
+                        <h:panelGrid columns="6"> 
+                         <h:outputText value="Case Number:">            </h:outputText>
+                         <h:inputText value="#{realtimebean.csno}" title ="cn" id="cn" required="false"/>
+                        <h:commandButton action="realtime" value="Add Case to Monitor" />
+                         
+
+                    </h:panelGrid>
+                                      
+                   
+                    
+                </h:form>
+            </ui:define>
+        </ui:composition>
+    </body>
+</html>

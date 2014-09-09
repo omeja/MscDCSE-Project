@@ -1,0 +1,19 @@
+This is TeX, Version 3.14159 (Web2c 7.3.3.1) (format=LATEX 2003.8.21)  16 APR 2013 12:37
+**&LATEX declaration.TEX
+(./declaration.TEX
+LaTeX2e <2001/06/01>
+Babel <v3.7h> and hyphenation patterns for american, loaded.
+! Undefined control sequence.
+l.4 \section
+            *{Declaration}
+? e
+ 
+Here is how much of TeX's memory you used:
+ 5 strings out of 10878
+ 62 string characters out of 70979
+ 1044422 words of memory out of 1263001
+ 3021 multiletter control sequences out of 10000+0
+ 3640 words of font info for 14 fonts, out of 200000 for 1000
+ 14 hyphenation exceptions out of 1000
+ 5i,0n,1p,49b,7s stack positions out of 300i,100n,500p,200000b,4000s
+No pages of output.

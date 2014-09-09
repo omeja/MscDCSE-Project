@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ViewPhonelogsTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputText value="#{bundle.ViewPhonelogsLabel_caseCode}"/>
+                    <h:outputText value="#{phonelogsController.selected.caseCode}" title="#{bundle.ViewPhonelogsTitle_caseCode}"/>
+                    <h:outputText value="#{bundle.ViewPhonelogsLabel_callId}"/>
+                    <h:outputText value="#{phonelogsController.selected.callId}" title="#{bundle.ViewPhonelogsTitle_callId}"/>
+                    <h:outputText value="#{bundle.ViewPhonelogsLabel_callDate}"/>
+                    <h:outputText value="#{phonelogsController.selected.callDate}" title="#{bundle.ViewPhonelogsTitle_callDate}">
+                        <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                    </h:outputText>
+                    <h:outputText value="#{bundle.ViewPhonelogsLabel_fromNo}"/>
+                    <h:outputText value="#{phonelogsController.selected.fromNo}" title="#{bundle.ViewPhonelogsTitle_fromNo}"/>
+                    <h:outputText value="#{bundle.ViewPhonelogsLabel_toNo}"/>
+                    <h:outputText value="#{phonelogsController.selected.toNo}" title="#{bundle.ViewPhonelogsTitle_toNo}"/>
+                    <h:outputText value="#{bundle.ViewPhonelogsLabel_cases}"/>
+                    <h:outputText value="#{phonelogsController.selected.cases}" title="#{bundle.ViewPhonelogsTitle_cases}"/>
+                    <h:outputText value="#{bundle.ViewPhonelogsLabel_requestID}"/>
+                    <h:outputText value="#{phonelogsController.selected.requestID}" title="#{bundle.ViewPhonelogsTitle_requestID}"/>
+                    <h:outputText value="#{bundle.ViewPhonelogsLabel_timestamp1}"/>
+                    <h:outputText value="#{phonelogsController.selected.timestamp1}" title="#{bundle.ViewPhonelogsTitle_timestamp1}">
+                        <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                    </h:outputText>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{phonelogsController.destroyAndView}" value="#{bundle.ViewPhonelogsDestroyLink}"/>
+                <br />
+                <br />
+                <h:link outcome="Edit" value="#{bundle.ViewPhonelogsEditLink}"/>
+                <br />
+                <h:commandLink action="#{phonelogsController.prepareCreate}" value="#{bundle.ViewPhonelogsCreateLink}" />
+                <br />
+                <h:commandLink action="#{phonelogsController.prepareList}" value="#{bundle.ViewPhonelogsShowAllLink}"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.ViewPhonelogsIndexLink}"/>
+
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

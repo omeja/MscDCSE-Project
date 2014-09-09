@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.CreateAssetsTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.CreateAssetsLabel_assetcode}" for="assetcode" />
+                    <h:inputText id="assetcode" value="#{assetsController.selected.assetcode}" title="#{bundle.CreateAssetsTitle_assetcode}" required="true" requiredMessage="#{bundle.CreateAssetsRequiredMessage_assetcode}"/>
+                    <h:outputLabel value="#{bundle.CreateAssetsLabel_assettype}" for="assettype" />
+                    <h:inputText id="assettype" value="#{assetsController.selected.assettype}" title="#{bundle.CreateAssetsTitle_assettype}" />
+                    <h:outputLabel value="#{bundle.CreateAssetsLabel_marketvalue}" for="marketvalue" />
+                    <h:inputText id="marketvalue" value="#{assetsController.selected.marketvalue}" title="#{bundle.CreateAssetsTitle_marketvalue}" />
+                    <h:outputLabel value="#{bundle.CreateAssetsLabel_acquiredate}" for="acquiredate" />
+                    <h:inputText id="acquiredate" value="#{assetsController.selected.acquiredate}" title="#{bundle.CreateAssetsTitle_acquiredate}" >
+                        <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                    </h:inputText>
+                    <h:outputLabel value="#{bundle.CreateAssetsLabel_acquirecost}" for="acquirecost" />
+                    <h:inputText id="acquirecost" value="#{assetsController.selected.acquirecost}" title="#{bundle.CreateAssetsTitle_acquirecost}" />
+                    <h:outputLabel value="#{bundle.CreateAssetsLabel_acquiremode}" for="acquiremode" />
+                    <h:inputText id="acquiremode" value="#{assetsController.selected.acquiremode}" title="#{bundle.CreateAssetsTitle_acquiremode}" />
+                    <h:outputLabel value="#{bundle.CreateAssetsLabel_sourceoffunds}" for="sourceoffunds" />
+                    <h:inputText id="sourceoffunds" value="#{assetsController.selected.sourceoffunds}" title="#{bundle.CreateAssetsTitle_sourceoffunds}" />
+                    <h:outputLabel value="#{bundle.CreateAssetsLabel_casecode}" for="casecode" />
+                    <h:selectOneMenu id="casecode" value="#{assetsController.selected.casecode}" title="#{bundle.CreateAssetsTitle_casecode}" >
+                        <f:selectItems value="#{casesController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                    <h:outputLabel value="#{bundle.CreateAssetsLabel_timestamp4}" for="timestamp4" />
+                    <h:inputText id="timestamp4" value="#{assetsController.selected.timestamp4}" title="#{bundle.CreateAssetsTitle_timestamp4}" >
+                        <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                    </h:inputText>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{assetsController.create}" value="#{bundle.CreateAssetsSaveLink}" />
+                <br />
+                <br />
+                <h:commandLink action="#{assetsController.prepareList}" value="#{bundle.CreateAssetsShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.CreateAssetsIndexLink}"/>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

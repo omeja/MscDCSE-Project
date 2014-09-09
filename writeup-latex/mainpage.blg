@@ -1,0 +1,68 @@
+This is BibTeX, Version 0.99c (Web2c 7.3.3.1)
+The top-level auxiliary file: mainpage.aux
+A level-1 auxiliary file: project-title.aux
+A level-1 auxiliary file: introductory-pages.aux
+A level-1 auxiliary file: introduction.aux
+A level-1 auxiliary file: literature.aux
+A level-1 auxiliary file: methodology.aux
+A level-1 auxiliary file: pattern-detection.aux
+A level-1 auxiliary file: conclusion.aux
+The style file: abbrv.bst
+A level-1 auxiliary file: appendices.aux
+Database file #1: myrefs.bib
+I was expecting a `,' or a `}'---line 341 of file myrefs.bib
+ : 
+ : @MISC{thirtyone,
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+I was expecting a `,' or a `}'---line 346 of file myrefs.bib
+ : 
+ : @MISC{thirtytwo,
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+Illegal end of database file---line 350 of file myrefs.bib
+ :     note = {Accessed: 2014-08-07}
+ :                                  
+I'm skipping whatever remains of this entry
+You've used 32 entries,
+            2118 wiz_defined-function locations,
+            683 strings with 9638 characters,
+and the built_in function-call counts, 9602 in all, are:
+= -- 980
+> -- 370
+< -- 8
++ -- 153
+- -- 118
+* -- 487
+:= -- 1566
+add.period$ -- 115
+call.type$ -- 32
+change.case$ -- 152
+chr.to.int$ -- 0
+cite$ -- 32
+duplicate$ -- 384
+empty$ -- 830
+format.name$ -- 118
+if$ -- 2109
+int.to.chr$ -- 0
+int.to.str$ -- 32
+missing$ -- 16
+newline$ -- 176
+num.names$ -- 64
+pop$ -- 240
+preamble$ -- 1
+purify$ -- 123
+quote$ -- 0
+skip$ -- 291
+stack$ -- 0
+substring$ -- 474
+swap$ -- 102
+text.length$ -- 8
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 124
+warning$ -- 0
+while$ -- 91
+width$ -- 34
+write$ -- 372
+(There were 3 error messages)

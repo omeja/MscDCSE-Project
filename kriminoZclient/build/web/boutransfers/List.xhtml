@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ListBoutransfersTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:form styleClass="jsfcrud_list_form">
+                <h:panelGroup id="messagePanel" layout="block">
+                    <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+                </h:panelGroup>
+                <h:outputText escape="false" value="#{bundle.ListBoutransfersEmpty}" rendered="#{boutransfersController.items.rowCount == 0}"/>
+                <h:panelGroup rendered="#{boutransfersController.items.rowCount > 0}">
+                    <h:outputText value="#{boutransfersController.pagination.pageFirstItem + 1}..#{boutransfersController.pagination.pageLastItem + 1}/#{boutransfersController.pagination.itemsCount}"/>&nbsp;
+                    <h:commandLink action="#{boutransfersController.previous}" value="#{bundle.Previous} #{boutransfersController.pagination.pageSize}" rendered="#{boutransfersController.pagination.hasPreviousPage}"/>&nbsp;
+                    <h:commandLink action="#{boutransfersController.next}" value="#{bundle.Next} #{boutransfersController.pagination.pageSize}" rendered="#{boutransfersController.pagination.hasNextPage}"/>&nbsp;
+                    <h:dataTable value="#{boutransfersController.items}" var="item" border="0" cellpadding="2" cellspacing="0" rowClasses="jsfcrud_odd_row,jsfcrud_even_row" rules="all" style="border:solid 1px">
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListBoutransfersTitle_idbou}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.idbou}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListBoutransfersTitle_bdate}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.bdate}">
+                                <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                            </h:outputText>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListBoutransfersTitle_transfertype}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.transfertype}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListBoutransfersTitle_debitacctno}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.debitacctno}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListBoutransfersTitle_debitacctname}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.debitacctname}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListBoutransfersTitle_debitamount}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.debitamount}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListBoutransfersTitle_creditbank}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.creditbank}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListBoutransfersTitle_creditacct}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.creditacct}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListBoutransfersTitle_bankstaffid}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.bankstaffid}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListBoutransfersTitle_govtstaffid}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.govtstaffid}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListBoutransfersTitle_casecode5}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.casecode5}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListBoutransfersTitle_itemcode}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.itemcode}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListBoutransfersTitle_entityCode}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.entityCode}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListBoutransfersTitle_workplanid}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.workplanid}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListBoutransfersTitle_reqid}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.reqid}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListBoutransfersTitle_craccstat}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.craccstat}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListBoutransfersTitle_limitamt}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.limitamt}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListBoutransfersTitle_timestamp5}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.timestamp5}">
+                                <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                            </h:outputText>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="&nbsp;"/>
+                            </f:facet>
+                            <h:commandLink action="#{boutransfersController.prepareView}" value="#{bundle.ListBoutransfersViewLink}"/>
+                            <h:outputText value=" "/>
+                            <h:commandLink action="#{boutransfersController.prepareEdit}" value="#{bundle.ListBoutransfersEditLink}"/>
+                            <h:outputText value=" "/>
+                            <h:commandLink action="#{boutransfersController.destroy}" value="#{bundle.ListBoutransfersDestroyLink}"/>
+                        </h:column>
+                    </h:dataTable>
+                </h:panelGroup>
+                <br />
+                <h:commandLink action="#{boutransfersController.prepareCreate}" value="#{bundle.ListBoutransfersCreateLink}"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.ListBoutransfersIndexLink}"/>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

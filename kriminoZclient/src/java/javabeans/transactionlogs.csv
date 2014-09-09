@@ -1,0 +1,4 @@
+tranid,ccode2,transdate,transcode,transamount,transtype,transaccount
+4,CPS001,Sun May 05 15:10:53 EAT 2013,FT004,41000000,CR,101223457
+
+5,CPS001,Sun May 05 15:10:53 EAT 2013,FT005,2000000,CR,101223457

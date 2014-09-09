@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.CreateBoutransfersTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.CreateBoutransfersLabel_idbou}" for="idbou" />
+                    <h:inputText id="idbou" value="#{boutransfersController.selected.idbou}" title="#{bundle.CreateBoutransfersTitle_idbou}" required="true" requiredMessage="#{bundle.CreateBoutransfersRequiredMessage_idbou}"/>
+                    <h:outputLabel value="#{bundle.CreateBoutransfersLabel_bdate}" for="bdate" />
+                    <h:inputText id="bdate" value="#{boutransfersController.selected.bdate}" title="#{bundle.CreateBoutransfersTitle_bdate}" >
+                        <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                    </h:inputText>
+                    <h:outputLabel value="#{bundle.CreateBoutransfersLabel_transfertype}" for="transfertype" />
+                    <h:inputText id="transfertype" value="#{boutransfersController.selected.transfertype}" title="#{bundle.CreateBoutransfersTitle_transfertype}" />
+                    <h:outputLabel value="#{bundle.CreateBoutransfersLabel_debitacctno}" for="debitacctno" />
+                    <h:inputText id="debitacctno" value="#{boutransfersController.selected.debitacctno}" title="#{bundle.CreateBoutransfersTitle_debitacctno}" />
+                    <h:outputLabel value="#{bundle.CreateBoutransfersLabel_debitacctname}" for="debitacctname" />
+                    <h:inputText id="debitacctname" value="#{boutransfersController.selected.debitacctname}" title="#{bundle.CreateBoutransfersTitle_debitacctname}" />
+                    <h:outputLabel value="#{bundle.CreateBoutransfersLabel_debitamount}" for="debitamount" />
+                    <h:inputText id="debitamount" value="#{boutransfersController.selected.debitamount}" title="#{bundle.CreateBoutransfersTitle_debitamount}" />
+                    <h:outputLabel value="#{bundle.CreateBoutransfersLabel_creditbank}" for="creditbank" />
+                    <h:inputText id="creditbank" value="#{boutransfersController.selected.creditbank}" title="#{bundle.CreateBoutransfersTitle_creditbank}" />
+                    <h:outputLabel value="#{bundle.CreateBoutransfersLabel_creditacct}" for="creditacct" />
+                    <h:inputText id="creditacct" value="#{boutransfersController.selected.creditacct}" title="#{bundle.CreateBoutransfersTitle_creditacct}" />
+                    <h:outputLabel value="#{bundle.CreateBoutransfersLabel_bankstaffid}" for="bankstaffid" />
+                    <h:inputText id="bankstaffid" value="#{boutransfersController.selected.bankstaffid}" title="#{bundle.CreateBoutransfersTitle_bankstaffid}" />
+                    <h:outputLabel value="#{bundle.CreateBoutransfersLabel_govtstaffid}" for="govtstaffid" />
+                    <h:inputText id="govtstaffid" value="#{boutransfersController.selected.govtstaffid}" title="#{bundle.CreateBoutransfersTitle_govtstaffid}" />
+                    <h:outputLabel value="#{bundle.CreateBoutransfersLabel_casecode5}" for="casecode5" />
+                    <h:selectOneMenu id="casecode5" value="#{boutransfersController.selected.casecode5}" title="#{bundle.CreateBoutransfersTitle_casecode5}" >
+                        <f:selectItems value="#{casesController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                    <h:outputLabel value="#{bundle.CreateBoutransfersLabel_itemcode}" for="itemcode" />
+                    <h:selectOneMenu id="itemcode" value="#{boutransfersController.selected.itemcode}" title="#{bundle.CreateBoutransfersTitle_itemcode}" >
+                        <f:selectItems value="#{budgetController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                    <h:outputLabel value="#{bundle.CreateBoutransfersLabel_entityCode}" for="entityCode" />
+                    <h:selectOneMenu id="entityCode" value="#{boutransfersController.selected.entityCode}" title="#{bundle.CreateBoutransfersTitle_entityCode}" >
+                        <f:selectItems value="#{entitiesController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                    <h:outputLabel value="#{bundle.CreateBoutransfersLabel_workplanid}" for="workplanid" />
+                    <h:inputText id="workplanid" value="#{boutransfersController.selected.workplanid}" title="#{bundle.CreateBoutransfersTitle_workplanid}" />
+                    <h:outputLabel value="#{bundle.CreateBoutransfersLabel_reqid}" for="reqid" />
+                    <h:selectOneMenu id="reqid" value="#{boutransfersController.selected.reqid}" title="#{bundle.CreateBoutransfersTitle_reqid}" >
+                        <f:selectItems value="#{requestController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                    <h:outputLabel value="#{bundle.CreateBoutransfersLabel_craccstat}" for="craccstat" />
+                    <h:inputText id="craccstat" value="#{boutransfersController.selected.craccstat}" title="#{bundle.CreateBoutransfersTitle_craccstat}" />
+                    <h:outputLabel value="#{bundle.CreateBoutransfersLabel_limitamt}" for="limitamt" />
+                    <h:inputText id="limitamt" value="#{boutransfersController.selected.limitamt}" title="#{bundle.CreateBoutransfersTitle_limitamt}" />
+                    <h:outputLabel value="#{bundle.CreateBoutransfersLabel_timestamp5}" for="timestamp5" />
+                    <h:inputText id="timestamp5" value="#{boutransfersController.selected.timestamp5}" title="#{bundle.CreateBoutransfersTitle_timestamp5}" >
+                        <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                    </h:inputText>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{boutransfersController.create}" value="#{bundle.CreateBoutransfersSaveLink}" />
+                <br />
+                <br />
+                <h:commandLink action="#{boutransfersController.prepareList}" value="#{bundle.CreateBoutransfersShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.CreateBoutransfersIndexLink}"/>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

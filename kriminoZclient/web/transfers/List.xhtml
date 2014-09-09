@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ListTransfersTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:form styleClass="jsfcrud_list_form">
+                <h:panelGroup id="messagePanel" layout="block">
+                    <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+                </h:panelGroup>
+                <h:outputText escape="false" value="#{bundle.ListTransfersEmpty}" rendered="#{transfersController.items.rowCount == 0}"/>
+                <h:panelGroup rendered="#{transfersController.items.rowCount > 0}">
+                    <h:outputText value="#{transfersController.pagination.pageFirstItem + 1}..#{transfersController.pagination.pageLastItem + 1}/#{transfersController.pagination.itemsCount}"/>&nbsp;
+                    <h:commandLink action="#{transfersController.previous}" value="#{bundle.Previous} #{transfersController.pagination.pageSize}" rendered="#{transfersController.pagination.hasPreviousPage}"/>&nbsp;
+                    <h:commandLink action="#{transfersController.next}" value="#{bundle.Next} #{transfersController.pagination.pageSize}" rendered="#{transfersController.pagination.hasNextPage}"/>&nbsp;
+                    <h:dataTable value="#{transfersController.items}" var="item" border="0" cellpadding="2" cellspacing="0" rowClasses="jsfcrud_odd_row,jsfcrud_even_row" rules="all" style="border:solid 1px">
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListTransfersTitle_id}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.id}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListTransfersTitle_tdate}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.tdate}">
+                                <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                            </h:outputText>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListTransfersTitle_tamount}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.tamount}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListTransfersTitle_froaccount}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.froaccount}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListTransfersTitle_toaccount}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.toaccount}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListTransfersTitle_frobank}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.frobank}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListTransfersTitle_tobank}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.tobank}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListTransfersTitle_cases}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.cases}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListTransfersTitle_wrkplanid}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.wrkplanid}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListTransfersTitle_taskid}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.taskid}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListTransfersTitle_contractid}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.contractid}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListTransfersTitle_timestamp3}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.timestamp3}">
+                                <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                            </h:outputText>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="&nbsp;"/>
+                            </f:facet>
+                            <h:commandLink action="#{transfersController.prepareView}" value="#{bundle.ListTransfersViewLink}"/>
+                            <h:outputText value=" "/>
+                            <h:commandLink action="#{transfersController.prepareEdit}" value="#{bundle.ListTransfersEditLink}"/>
+                            <h:outputText value=" "/>
+                            <h:commandLink action="#{transfersController.destroy}" value="#{bundle.ListTransfersDestroyLink}"/>
+                        </h:column>
+                    </h:dataTable>
+                </h:panelGroup>
+                <br />
+                <h:commandLink action="#{transfersController.prepareCreate}" value="#{bundle.ListTransfersCreateLink}"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.ListTransfersIndexLink}"/>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

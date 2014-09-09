@@ -1,0 +1,70 @@
+<?xml version='1.0' encoding='UTF-8' ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+
+    <h:head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <link href="./../../resources/css/default.css" rel="stylesheet" type="text/css" />
+        <link href="./../../resources/css/cssLayout.css" rel="stylesheet" type="text/css" />
+        <title>Krimino</title>
+    </h:head>
+
+    <h:body>
+        <p:layout fullPage="true">
+            <p:layoutUnit position="north" size="50">
+                <ui:insert name="top"> <b>Krimino - The Crime Investigation Tool</b></ui:insert>
+
+            </p:layoutUnit>
+            <p:layoutUnit position="south" size="60">
+                <ui:insert name="bottom">
+                    <br></br><b>Powered By Osbert Osamai - MSc.DCSE 2010/HD18/1259U</b></ui:insert>
+            </p:layoutUnit>
+            <p:layoutUnit position="west" size="250">
+                <p:accordionPanel>
+                    <p:tab title="Update Source App">
+                        <a style="color: #090" href="http://localhost:8080/kriminoZclient/faces/index.xhtml" > Existing /Source Application</a>
+                        <br></br>
+                        
+                    </p:tab>
+
+                    <!--                    <p:tab title="Reports">
+                                            <a href="http://localhost:8080/kriminoZclient/faces/cases/List.xhtml" > Cases</a>
+                                            <br></br>
+                                             <a href="http://localhost:8080/kriminoZclient/faces/casetrans/List.xhtml" > Transactions</a>
+                                             <br></br>
+                                             <a href="http://localhost:8080/kriminoZclient/faces/transfers/List.xhtml" > Cash Transfers</a>
+                                             <br></br>
+                                             <a href="http://localhost:8080/kriminoZclient/faces/phonelogs/List.xhtml" > Phone Logs</a>
+                                        </p:tab>-->
+                    <p:tab title="Realtime Setup">
+                      <a href="http://localhost:8080/kriminoZclient/faces/realtime.xhtml" style="color: #090"> SetUp Parameter Case </a>
+<!--                         <h:outputText value="Case Number:">            </h:outputText>
+                        <h:inputText value="#{realtimeBean.csno}" title ="case" id="cn" required="false"/>
+                        <h:commandButton action="realtime" value="Add Case" />-->
+                    </p:tab>
+
+                </p:accordionPanel>
+            </p:layoutUnit>
+            <p:layoutUnit position="east" size="0">
+                <!-- <p:accordionPanel>
+                     <p:tab title="Export"></p:tab>
+                
+                <p:tab title="Printing">
+                
+                </p:tab>
+                //any number of tabs
+                </p:accordionPanel>-->
+
+
+            </p:layoutUnit>
+            <p:layoutUnit position="center">
+                <ui:insert name="content">Content</ui:insert>
+            </p:layoutUnit>
+        </p:layout>
+
+    </h:body>
+
+</html>

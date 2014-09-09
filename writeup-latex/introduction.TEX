@@ -1,0 +1,46 @@
+\section{CHAPTER ONE: Introduction}
+\pagenumbering{arabic}
+\noindent Crime investigation world over is considered a difficult and laborious process that heavily relies on efficient crime analysis to ensure accurate and timely conclusions. This is not helped by the fact that law enforcement agencies deploy manual investigation processes and computerized systems that cannot quickly identify complex crime patterns.
+
+\noindent In Uganda, the situation is no different with these agencies facing massive delays in crime solving and increasing numbers of sophisticated crimes, most of them of the organized category. Every year tens of thousands of cases are carried forward to the following year, uncompleted. As the usual circle of crime would dictate, fresh cases are reported every day, and, gradually, older cases left uncompleted lose the urgency they initially generated and, inadvertently, they die a natural death \cite{eleven}.
+
+
+
+\noindent To avert this problem there is need to deploy sophisticated tools, technologies and resources that can enable crime investigators quickly reach reasonable conclusions by identifying patterns of behavior in criminals. In so doing, not only will crimes be investigated faster but some future crimes may be prevented based on recurring patterns identified. However, intelligence and law enforcement agencies are often faced with the dilemma of having too much data, which in effect makes too little value. On one hand, they have large volumes of raw data collected from multiple sources: phone records, bank accounts and transactions, vehicle sales and registration records, and surveillance reports. On the other hand, they lack sophisticated network analysis tools and techniques to utilize the data effectively and efficiently \cite{fifteen}.
+
+\noindent In this project the phenomenon of Complex Event Processing (CEP) is used to detect patterns in crime related events using the Esper engine \cite{twentyfive} which is CEP engine for high throughput and performance.Esper is an open-source CEP engine developed by EsperTEch Inc. and volunteers under the GNU General Public License(GPL v2).Esper takes advantage of its two flavours(Esper for Java and NEsper for .NET) to provide APIs that enable processing of events using the Event Processing Language.
+
+\noindent Esper was selected for this project because it is freely available as an open-source project,has been proven to scale well with high throughput,has low latency given that dat is not saved first then queried, combines stream processing and Complex Event Processing on one platform,the processing language is similar to SQL and easy to use,supports multiple formats for incoming events(XML,CSV,HashMaps,HTTP,Sockets and more) and has been proven \cite{twentyfive} to simplify the complexity of pattern detection in the areas of Stock Trading,Network Analysis and others.
+\newpage
+\subsection{Statement of the problem}
+\noindent Due to the manual nature of crime investigations in Uganda, case backlog remains a critical issue leading to delayed justice, unpunished criminals and of course a loss of confidence in the agencies and government by the citizenry.
+
+\noindent Criminals have become very intelligent due to the advancement of technology and therefore they conduct crimes in an untraceable manner. Majority of those crimes evolve in a long period of time making them even more difficult to predict. Therefore the rate of organized crime is on the rise most of which are orchestrated in vast geographical areas using these complex techniques.
+
+\noindent Therefore, manual techniques of analyzing such data with a vast variation have resulted in lower productivity and ineffective utilization of manpower\cite{three}.There is need to develop a tool to quicken the investigation process by accurately guiding investigators in evidence analysis and also use recurrent patterns to prevent future crimes.
+
+\subsection{Objectives}
+\subsubsection{General Objective}
+To develop a crime investigation tool that deploys Complexing Event Processing techniques and tools to detect crime events in data streams and consequently ease the investigation process.
+\subsubsection{Specific Objectives}
+Specifically, the objectives of the study are:
+\begin{enumerate}[(i)]
+\item Identify existing crime patterns associated with crimes related to causing financial loss.
+\item Generate events from existing data source into a CEP engine for processing.
+\item Setup and detect crime patterns in events using a CEP engine.
+\item Display to the user/client events matching the pattern and the rate(success percentage).
+ \end{enumerate}
+\subsection{Scope}
+The tool was developed for the Criminal Investigation Department of the Uganda Police to enable investigation officers easily detect crime patterns by quickly processing evidence data.For demonstration purposes,the project focused on crimes related to corruption in government ministries due to the national significance of such cases and the readily available structured data.
+
+\subsection{Significance of the study}
+To Enhance the crime investigation process by using CEP techniques and tools to detect pre-defined patterns in good time and perform efficient correlations of events.
+\noindent The goals of the study are:
+\begin{enumerate}[(i)]
+\item Reduce case backlog through quick and multiple processing of case files to restore public confidence in the Police.
+\item Reduce human intervention by officers in terms of cross referencing and analysis of crime data.
+\item Provide a foundation for prediction of future crimes based on current crime trend analysis.	
+\item Reduce government expenditure and reliance on manual crime analysis methods.
+
+\end{enumerate}
+

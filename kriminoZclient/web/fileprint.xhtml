@@ -1,0 +1,70 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+
+    <body>
+
+        <ui:composition template="./WEB-INF/krimino-template/krimino-template.xhtml">
+
+
+
+
+            <ui:define name="content">
+
+                <h:form>
+                    <br></br>
+                    <br></br>
+                    <b><h:outputText value="#{mainBean5.cfile}" style="text-decoration-color: #090" /></b>
+
+
+                    <br></br>
+                    <br></br>
+                    <h:outputText value="--------------------------------------------------------------" />
+                    <br></br>
+                    <i>
+                        <h:outputText value="#{mainBean5.filepath2}" />
+                         <p:commandButton value="Open File" ajax="false">
+                             <p:fileDownload value="#{fileDownloadController.CSVFile}"/>
+                            </p:commandButton>
+                        <br></br>
+                        <br></br>
+                        <h:outputText value="#{mainBean5.filepath3}" />
+                        <p:commandButton value="Open File" ajax="false" >
+                             <p:fileDownload value="#{fileDownloadController.CSVFile2}"/>
+                            </p:commandButton>
+                        <br></br>
+                        <br></br>
+                        <h:outputText value="#{mainBean5.filepath5}" />
+                         <p:commandButton value="Open File" ajax="false">
+                             <p:fileDownload value="#{fileDownloadController.CSVFile3}"/>
+                            </p:commandButton>
+                        <br></br>
+                        <br></br>
+                        <h:outputText value="#{mainBean5.filepath7}" />
+                         <p:commandButton value="Open File" ajax="false">
+                             <p:fileDownload value="#{fileDownloadController.CSVFile4}"/>
+                            </p:commandButton>
+                        <br></br>
+                        <br></br>
+                        <h:outputText value="#{mainBean5.filepath8}" />
+                         <p:commandButton value="Open File" ajax="false">
+                             <p:fileDownload value="#{fileDownloadController.CSVFile5}"/>
+                            </p:commandButton>
+                        <br></br>
+                        <h:outputText value="--------------------------------------------------------------" />
+                        <br></br>
+                        <br></br>
+                    </i>
+
+                    <h:commandButton action="show" value="Process Events" style="text-emphasis-color: #090" />
+                </h:form>
+              
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>

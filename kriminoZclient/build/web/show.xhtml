@@ -1,0 +1,318 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    <head>
+       
+    </head>
+    <body>
+
+        <ui:composition template="./WEB-INF/krimino-template/krimino-template.xhtml">
+
+
+            <ui:define name="content">
+                <h:form id="form1">
+
+  
+                    <p:poll interval="10"  listener="#{counterBean.increment(event)}" update="@form" />
+
+                    <h:outputText   value="#{mainBean.compute()}" style="color: #090" />
+                  
+
+                    <br> </br>
+                    <b>
+                    <h:outputText value="Analysis Report" />
+                    </b>
+                    <br></br>
+                    <br> </br>
+                    <b>
+                        <h:outputText value="Case File Number:#{mainBean.caseNo}" style="color: #090" />
+                    </b>
+                    <br></br>
+                    <br> </br>
+                    <h:outputText value="Total Records:" />
+                    <h:outputText value="(" />
+                    <h:outputText value="#{mainBean.totcnt}" style="color: #00f " id="tot1"  />
+                    <!--<p:poll interval="25" update="tot1" />-->
+                    <h:outputText value=")" />
+
+                    
+                    <br></br>
+                    <br></br>
+                    <h:outputText value="Percentage Pattern Match :" />
+                     <br></br>
+                    <br></br>
+                    <h:outputText value="#{mainBean.totp} " style="color: #00f" id="tot2"/>
+                    <!--<p:poll interval="25" update="tot2" />-->
+                    <h:outputText value="(" />
+                    <h:outputText value="of" />
+                    <h:outputText value=")" />
+                    <h:outputText value="#{mainBean.totn}" style="color: #00f" />
+                    <h:outputText value="----->(" />
+                    <h:outputText value="#{mainBean.totperc}" style="color: #00f" />
+                    <h:outputText value="%" />
+                    <h:outputText value=")" />
+
+                    <br></br>
+
+                    <br></br>
+
+                    <p:dataTable var="rep8" value="#{mainBean.pats77}"  >
+
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="Filename" />
+                            </f:facet>
+                            <h:outputText value="#{rep8.filename}" />
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="Credit Account" />
+                            </f:facet>
+                            <h:outputText value="#{rep8.cracct}" />
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="Debit Account" />
+                            </f:facet>
+                            <h:outputText value="#{rep8.dbAcct}" />
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="WorkPlan Code" />
+                            </f:facet>
+                            <h:outputText value="#{rep8.wrkid}" />
+                        </p:column>     
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="Request Date" />
+                            </f:facet>
+                            <h:outputText value="#{rep8.reqdate}" />
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="UserID" />
+                            </f:facet>
+                            <h:outputText value="#{rep8.userid}" />
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="User Level" />
+                            </f:facet>
+                            <h:outputText value="#{rep8.userlevel}" />
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="Ministry" />
+                            </f:facet>
+                            <h:outputText value="#{rep8.entcode}" />
+                        </p:column>
+                    </p:dataTable>
+
+                    <br></br>
+                    <i>
+                        <h:outputText value="#{mainBean.cntmsg8}"  />
+                    </i>
+                    <br></br>
+                     <br></br>
+                    <p:dataTable var="rep2" value="#{mainBean.pats22}" id="tab2">
+
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="Transaction Date" />
+                            </f:facet>
+                            <h:outputText value="#{rep2.bdate}" />
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="Transaction Type" />
+                            </f:facet>
+                            <h:outputText value="#{rep2.transfertype}" />
+                        </p:column>
+
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="Debit Amount" />
+                            </f:facet>
+                            <h:outputText value="#{rep2.debitamt}" />
+                        </p:column>     
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="Debit Account" />
+                            </f:facet>
+                            <h:outputText value="#{rep2.dacct}" />
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="Credit Account" />
+                            </f:facet>
+                            <h:outputText value="#{rep2.creditacct}" />
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="Limit" />
+                            </f:facet>
+                            <h:outputText value="#{rep2.limit}" />
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="Status" />
+                            </f:facet>
+                            <h:outputText value="#{rep2.status}" />
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="Bank Authoriser" />
+                            </f:facet>
+
+                            <h:outputText  value="#{rep2.staff2}" />
+
+                        </p:column>
+                    </p:dataTable>
+                   
+                    <br></br>
+                    <i>
+                        <h:outputText value="#{mainBean.cntmsg2}" />
+                    </i>
+                    <br></br>
+                    <br></br>
+                    <p:dataTable var="rep3" value="#{mainBean.pats33}">
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="Source Account" />
+                            </f:facet>
+                            <h:outputText value="#{rep3.froacct}" />
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="Transfer Amount" />
+                            </f:facet>
+                            <h:outputText value="#{rep3.tamount}" />
+                        </p:column>
+
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="Destination Account" />
+                            </f:facet>
+                            <h:outputText value="#{rep3.toacct}" />
+                        </p:column>     
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="Transfer Date" />
+                            </f:facet>
+                            <h:outputText value="#{rep3.trdate}" />
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="Project Status" />
+                            </f:facet>
+                            <h:outputText value="#{rep3.tstat}" />
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="Work Plan" />
+                            </f:facet>
+                            <h:outputText value="#{rep3.wplan}" />
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="Contract Amount" />
+                            </f:facet>
+                            <h:outputText value="#{rep3.camt}" />
+                        </p:column>
+                    </p:dataTable>
+                    <br></br>
+                    <i>
+                        <h:outputText value="#{mainBean.cntmsg3}" />
+                    </i>
+
+                    <br></br>
+                    <br></br>
+                    <p:dataTable var="rep6" value="#{mainBean.pats66}">
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="Caller No" />
+                            </f:facet>
+                            <h:outputText value="#{rep6.frono}" />
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="Call Date" />
+                            </f:facet>
+                            <h:outputText value="#{rep6.calldate}" />
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="Destination No" />
+                            </f:facet>
+                            <h:outputText value="#{rep6.tono}" />
+                        </p:column>
+
+
+                    </p:dataTable>
+                    <br></br>
+                    <i>
+                        <h:outputText value="#{mainBean.cntmsg6}" />
+                    </i>
+                    <br></br>
+                    <br></br>
+                    <p:dataTable var="rep11" value="#{mainBean.pats111}">
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="Email Date" />
+                            </f:facet>
+                            <h:outputText value="#{rep11.emaildate}" />
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="Request Code" />
+                            </f:facet>
+                            <h:outputText value="#{rep11.requestid}" />
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="Email Reference" />
+                            </f:facet>
+                            <h:outputText value="#{rep11.emailid}" />
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="Source Address" />
+                            </f:facet>
+                            <h:outputText value="#{rep11.sourceadd}" />
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="Destination Address" />
+                            </f:facet>
+                            <h:outputText value="#{rep11.destadd}" />
+                        </p:column>
+
+                    </p:dataTable>
+                    <br></br>
+                    <i>
+                        <h:outputText value="#{mainBean.cntmsg11}" />
+                    </i>
+
+                    <br></br>
+                    <br></br>
+                   
+                    <!--<p:barChart id ="chart1" value="#{mainBean.model2}" legendPosition="ne" title="Case Analysis" />-->
+
+
+
+
+                </h:form>
+
+            </ui:define>
+
+
+
+        </ui:composition>
+
+    </body>
+
+</html>

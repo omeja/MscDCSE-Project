@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.CreateRequestTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.CreateRequestLabel_filenme}" for="filenme" />
+                    <h:inputText id="filenme" value="#{requestController.selected.filenme}" title="#{bundle.CreateRequestTitle_filenme}" required="true" requiredMessage="#{bundle.CreateRequestRequiredMessage_filenme}"/>
+                    <h:outputLabel value="#{bundle.CreateRequestLabel_debitaccount}" for="debitaccount" />
+                    <h:inputText id="debitaccount" value="#{requestController.selected.debitaccount}" title="#{bundle.CreateRequestTitle_debitaccount}" />
+                    <h:outputLabel value="#{bundle.CreateRequestLabel_creditaccount}" for="creditaccount" />
+                    <h:inputText id="creditaccount" value="#{requestController.selected.creditaccount}" title="#{bundle.CreateRequestTitle_creditaccount}" />
+                    <h:outputLabel value="#{bundle.CreateRequestLabel_amount}" for="amount" />
+                    <h:inputText id="amount" value="#{requestController.selected.amount}" title="#{bundle.CreateRequestTitle_amount}" />
+                    <h:outputLabel value="#{bundle.CreateRequestLabel_reqDate}" for="reqDate" />
+                    <h:inputText id="reqDate" value="#{requestController.selected.reqDate}" title="#{bundle.CreateRequestTitle_reqDate}" >
+                        <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                    </h:inputText>
+                    <h:outputLabel value="#{bundle.CreateRequestLabel_workplnId}" for="workplnId" />
+                    <h:selectOneMenu id="workplnId" value="#{requestController.selected.workplnId}" title="#{bundle.CreateRequestTitle_workplnId}" >
+                        <f:selectItems value="#{workplanController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                    <h:outputLabel value="#{bundle.CreateRequestLabel_userId}" for="userId" />
+                    <h:selectOneMenu id="userId" value="#{requestController.selected.userId}" title="#{bundle.CreateRequestTitle_userId}" >
+                        <f:selectItems value="#{userrightsController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                    <h:outputLabel value="#{bundle.CreateRequestLabel_entcode}" for="entcode" />
+                    <h:selectOneMenu id="entcode" value="#{requestController.selected.entcode}" title="#{bundle.CreateRequestTitle_entcode}" >
+                        <f:selectItems value="#{entitiesController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                    <h:outputLabel value="#{bundle.CreateRequestLabel_casecode}" for="casecode" />
+                    <h:selectOneMenu id="casecode" value="#{requestController.selected.casecode}" title="#{bundle.CreateRequestTitle_casecode}" >
+                        <f:selectItems value="#{casesController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                    <h:outputLabel value="#{bundle.CreateRequestLabel_timestamp7}" for="timestamp7" />
+                    <h:inputText id="timestamp7" value="#{requestController.selected.timestamp7}" title="#{bundle.CreateRequestTitle_timestamp7}" >
+                        <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                    </h:inputText>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{requestController.create}" value="#{bundle.CreateRequestSaveLink}" />
+                <br />
+                <br />
+                <h:commandLink action="#{requestController.prepareList}" value="#{bundle.CreateRequestShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.CreateRequestIndexLink}"/>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

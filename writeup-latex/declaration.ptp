@@ -1,0 +1,7 @@
+# PCTeX Project File, Version 1.1
+	name: declaration
+	texformat: LATEX
+declaration.TEX
+	wndpos: 1 -1 -1 -8 -30 200 200 1366 647
+	zorder: 0
+	edit: 659

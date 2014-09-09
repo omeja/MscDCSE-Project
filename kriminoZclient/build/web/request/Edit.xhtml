@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.EditRequestTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.EditRequestLabel_filenme}" for="filenme" />
+                    <h:inputText id="filenme" value="#{requestController.selected.filenme}" title="#{bundle.EditRequestTitle_filenme}" required="true" requiredMessage="#{bundle.EditRequestRequiredMessage_filenme}"/>
+                    <h:outputLabel value="#{bundle.EditRequestLabel_debitaccount}" for="debitaccount" />
+                    <h:inputText id="debitaccount" value="#{requestController.selected.debitaccount}" title="#{bundle.EditRequestTitle_debitaccount}" />
+                    <h:outputLabel value="#{bundle.EditRequestLabel_creditaccount}" for="creditaccount" />
+                    <h:inputText id="creditaccount" value="#{requestController.selected.creditaccount}" title="#{bundle.EditRequestTitle_creditaccount}" />
+                    <h:outputLabel value="#{bundle.EditRequestLabel_amount}" for="amount" />
+                    <h:inputText id="amount" value="#{requestController.selected.amount}" title="#{bundle.EditRequestTitle_amount}" />
+                    <h:outputLabel value="#{bundle.EditRequestLabel_reqDate}" for="reqDate" />
+                    <h:inputText id="reqDate" value="#{requestController.selected.reqDate}" title="#{bundle.EditRequestTitle_reqDate}" >
+                        <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                    </h:inputText>
+                    <h:outputLabel value="#{bundle.EditRequestLabel_workplnId}" for="workplnId" />
+                    <h:selectOneMenu id="workplnId" value="#{requestController.selected.workplnId}" title="#{bundle.EditRequestTitle_workplnId}" >
+                        <f:selectItems value="#{workplanController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                    <h:outputLabel value="#{bundle.EditRequestLabel_userId}" for="userId" />
+                    <h:selectOneMenu id="userId" value="#{requestController.selected.userId}" title="#{bundle.EditRequestTitle_userId}" >
+                        <f:selectItems value="#{userrightsController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                    <h:outputLabel value="#{bundle.EditRequestLabel_entcode}" for="entcode" />
+                    <h:selectOneMenu id="entcode" value="#{requestController.selected.entcode}" title="#{bundle.EditRequestTitle_entcode}" >
+                        <f:selectItems value="#{entitiesController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                    <h:outputLabel value="#{bundle.EditRequestLabel_casecode}" for="casecode" />
+                    <h:selectOneMenu id="casecode" value="#{requestController.selected.casecode}" title="#{bundle.EditRequestTitle_casecode}" >
+                        <f:selectItems value="#{casesController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                    <h:outputLabel value="#{bundle.EditRequestLabel_timestamp7}" for="timestamp7" />
+                    <h:inputText id="timestamp7" value="#{requestController.selected.timestamp7}" title="#{bundle.EditRequestTitle_timestamp7}" >
+                        <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                    </h:inputText>
+                </h:panelGrid>
+                <h:commandLink action="#{requestController.update}" value="#{bundle.EditRequestSaveLink}"/>
+                <br />
+                <br />
+                <h:link outcome="View" value="#{bundle.EditRequestViewLink}"/>
+                <br />
+                <h:commandLink action="#{requestController.prepareList}" value="#{bundle.EditRequestShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.EditRequestIndexLink}" />
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

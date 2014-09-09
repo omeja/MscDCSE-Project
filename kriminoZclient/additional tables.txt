@@ -1,0 +1,51 @@
+1.Budget
+
+itemcode
+qtr
+itemdesc
+amount
+casecode
+
+
+2. BOU Transfer Request/Details
+
+
+
+Date
+transfer type -wire,account to account
+Debit account no
+account name
+amount
+credit bank
+credit acct no
+payment code -purpose of payment
+bank staff Signature
+Govt Staff Signature
+casecode
+itemcode
+
+3. Account Txns -existing
+
+4. Account transfers -existing
+
+5. Acquired Assets
+------------------
+Asset.No
+type of asset
+current MArket Value
+Acquisition Date
+Acqusition Cost
+Acqusition Mode
+source of funds
+casecode
+
+6.Income Details
+-----------------
+Item.No
+casecode
+desc
+type of income
+frequency
+amount
+
+

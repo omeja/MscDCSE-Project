@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.EditEntitiesTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.EditEntitiesLabel_code}" for="code" />
+                    <h:inputText id="code" value="#{entitiesController.selected.code}" title="#{bundle.EditEntitiesTitle_code}" required="true" requiredMessage="#{bundle.EditEntitiesRequiredMessage_code}"/>
+                    <h:outputLabel value="#{bundle.EditEntitiesLabel_description}" for="description" />
+                    <h:inputText id="description" value="#{entitiesController.selected.description}" title="#{bundle.EditEntitiesTitle_description}" />
+                </h:panelGrid>
+                <h:commandLink action="#{entitiesController.update}" value="#{bundle.EditEntitiesSaveLink}"/>
+                <br />
+                <br />
+                <h:link outcome="View" value="#{bundle.EditEntitiesViewLink}"/>
+                <br />
+                <h:commandLink action="#{entitiesController.prepareList}" value="#{bundle.EditEntitiesShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.EditEntitiesIndexLink}" />
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

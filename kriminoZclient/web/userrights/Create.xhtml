@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.CreateUserrightsTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.CreateUserrightsLabel_userID}" for="userID" />
+                    <h:inputText id="userID" value="#{userrightsController.selected.userID}" title="#{bundle.CreateUserrightsTitle_userID}" required="true" requiredMessage="#{bundle.CreateUserrightsRequiredMessage_userID}"/>
+                    <h:outputLabel value="#{bundle.CreateUserrightsLabel_dateCreated}" for="dateCreated" />
+                    <h:inputText id="dateCreated" value="#{userrightsController.selected.dateCreated}" title="#{bundle.CreateUserrightsTitle_dateCreated}" />
+                    <h:outputLabel value="#{bundle.CreateUserrightsLabel_creater}" for="creater" />
+                    <h:inputText id="creater" value="#{userrightsController.selected.creater}" title="#{bundle.CreateUserrightsTitle_creater}" />
+                    <h:outputLabel value="#{bundle.CreateUserrightsLabel_userAuthority}" for="userAuthority" />
+                    <h:inputText id="userAuthority" value="#{userrightsController.selected.userAuthority}" title="#{bundle.CreateUserrightsTitle_userAuthority}" />
+                    <h:outputLabel value="#{bundle.CreateUserrightsLabel_staffLevel}" for="staffLevel" />
+                    <h:inputText id="staffLevel" value="#{userrightsController.selected.staffLevel}" title="#{bundle.CreateUserrightsTitle_staffLevel}" />
+                    <h:outputLabel value="#{bundle.CreateUserrightsLabel_entity}" for="entity" />
+                    <h:selectOneMenu id="entity" value="#{userrightsController.selected.entity}" title="#{bundle.CreateUserrightsTitle_entity}" >
+                        <f:selectItems value="#{entitiesController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                    <h:outputLabel value="#{bundle.CreateUserrightsLabel_casecode}" for="casecode" />
+                    <h:selectOneMenu id="casecode" value="#{userrightsController.selected.casecode}" title="#{bundle.CreateUserrightsTitle_casecode}" >
+                        <f:selectItems value="#{casesController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{userrightsController.create}" value="#{bundle.CreateUserrightsSaveLink}" />
+                <br />
+                <br />
+                <h:commandLink action="#{userrightsController.prepareList}" value="#{bundle.CreateUserrightsShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.CreateUserrightsIndexLink}"/>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

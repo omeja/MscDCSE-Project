@@ -1,0 +1,7 @@
+# PCTeX Project File, Version 1.1
+	name: conclusion
+	texformat: LATEX
+conclusion.TEX
+	wndpos: 1 -1 -1 -8 -30 225 225 1575 744
+	zorder: 0
+	edit: 15

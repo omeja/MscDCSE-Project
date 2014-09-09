@@ -1,0 +1,101 @@
+\input setbmp
+\section{CHAPTER FOUR:The Crime Investigation Tool}
+
+\noindent In this chapter we discuss the crime pattern that was built in the tool for purposes of proof of concept, the operation and functionality of the tool and we present the test results based on the test cases in the previous chapter and  in Appendix D.
+
+
+\subsection{Crime Pattern and Parameters}
+
+\noindent The pattern is made of five major events (Funds Request, Funds Release, Payments, Phone Logs, Email Logs) which together represent the general pattern used.Any violations detected in any of the five events leads to a degree of pattern match.
+
+[Add diagram for flow]
+
+\subsubsection{Funds Request By Ministry}
+
+\noindent Before any amount of money is disbursed to any government entity there must be a budget designed at the Ministry of Finance (government) stipulating funds available for different activities. These funds are availed on a periodic basis to the entity most commonly quarterly.
+
+\noindent Likewise the government entity requesting for funds must provide a detailed budget to the Ministry of Finance if it is another ministry or through the Ministry of local government for Local Governments. This work plan provides a form of accountability to government for the released amounts.Requests for release of funds must duly be authorized by a designated official permitted to act on behalf of the entity.
+
+\noindent Therefore for this event the parameters used are;
+
+\begin{enumerate}[(i)]
+\item Identification of authorization level of the requesting officer (Must be the Permanent Sectary or authorized replacement)
+\item Checking the availability of a workplan for a given request. 
+\end{enumerate}
+
+\subsubsection{Funds Release By Central Bank (BOU)}
+
+\noindent This is the process of releasing funds to requesting entity on a periodic basis as per the budget arrangements. It involves transferring funds from the government account at the Central Bank (Bank of Uganda) to the respective accounts via electronic payment systems (EFTs).
+
+\noindent The parameters used here are;
+
+\begin{enumerate}[(i)]
+\item Checking that the debited account is not in a dormant status(Dormant Accounts not to be debited).
+\item Checking that the disbursed amount does not exceed the set limit for daily releases to ministries.
+\end{enumerate}
+
+\subsubsection{Emails and Phone Logs Events}
+
+\noindent These are closely linked to the Funds Release event given that before money is released a confirmation email must be sent from the treasury endorsing the request and a phone call must be made from the Central Bank to the Permanent Secretary confirming the authorizer.
+
+\noindent Therefore for these two events,the parameters are ;
+
+\begin{enumerate}[(i)]
+\item Availability of a confirmation email record from the treasury.
+\item Availability of confirmation phone call record from Bank of Uganda to the Permanent Secretary.
+\end{enumerate}
+
+\subsubsection{Payments Event}
+
+\noindent This is a record of how the funds were spent and may include payment details, account statements from the entity and suppliers accounts and also account opening details.A report of activities completed periodically must be availed to get value for money. Here the work done is verified against the budget or work plan submitted at the point of request for funds.
+
+\noindent The parameters include;
+
+\begin{enumerate}[(i)]
+\item Checking if amount paid exceeds agreed amount in contract.
+\item Checking that work being paid for was completed and not pending.
+\end{enumerate}
+
+\subsection{Tool Functionality/Operation}
+
+\subsubsection{Client Request}
+
+\noindent In the single mode  one case file number is added for processing while in the multi-mode more than one case is selected or added for processing.Selections are made at the different event sections defining conditions for returned records and the request is submitted.
+
+\begin{center}
+\begin{figure}[h]
+\centerbmp{14cm}{10cm}{pic1.bmp}
+\caption{Case Input and Selection screen}
+
+\end{figure}
+\end{center}
+
+
+\subsubsection{System Response}
+
+\noindent The output is form of a single web view and PDF format files depending on the input mode (single or multi-mode).For the multi-mode a PDF file is created for the same number of cases file numbers processed and a single web view for one of the cases as below;
+
+\begin{center}
+\begin{figure}[h]
+\centerbmp{14cm}{8cm}{pic2.bmp}
+\caption{Web/Mobile View }
+
+\end{figure}
+\end{center}
+
+\begin{center}
+\begin{figure}[h]
+\centerbmp{14cm}{3cm}{pic3.bmp}
+\caption{Generated PDF files for multiple Case Files}
+
+\end{figure}
+\end{center}
+
+\begin{center}
+\begin{figure}[h]
+\centerbmp{14cm}{10cm}{pic4.bmp}
+\caption{PDF File Display}
+
+\end{figure}
+\end{center}
+

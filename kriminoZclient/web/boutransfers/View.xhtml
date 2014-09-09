@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ViewBoutransfersTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputText value="#{bundle.ViewBoutransfersLabel_idbou}"/>
+                    <h:outputText value="#{boutransfersController.selected.idbou}" title="#{bundle.ViewBoutransfersTitle_idbou}"/>
+                    <h:outputText value="#{bundle.ViewBoutransfersLabel_bdate}"/>
+                    <h:outputText value="#{boutransfersController.selected.bdate}" title="#{bundle.ViewBoutransfersTitle_bdate}">
+                        <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                    </h:outputText>
+                    <h:outputText value="#{bundle.ViewBoutransfersLabel_transfertype}"/>
+                    <h:outputText value="#{boutransfersController.selected.transfertype}" title="#{bundle.ViewBoutransfersTitle_transfertype}"/>
+                    <h:outputText value="#{bundle.ViewBoutransfersLabel_debitacctno}"/>
+                    <h:outputText value="#{boutransfersController.selected.debitacctno}" title="#{bundle.ViewBoutransfersTitle_debitacctno}"/>
+                    <h:outputText value="#{bundle.ViewBoutransfersLabel_debitacctname}"/>
+                    <h:outputText value="#{boutransfersController.selected.debitacctname}" title="#{bundle.ViewBoutransfersTitle_debitacctname}"/>
+                    <h:outputText value="#{bundle.ViewBoutransfersLabel_debitamount}"/>
+                    <h:outputText value="#{boutransfersController.selected.debitamount}" title="#{bundle.ViewBoutransfersTitle_debitamount}"/>
+                    <h:outputText value="#{bundle.ViewBoutransfersLabel_creditbank}"/>
+                    <h:outputText value="#{boutransfersController.selected.creditbank}" title="#{bundle.ViewBoutransfersTitle_creditbank}"/>
+                    <h:outputText value="#{bundle.ViewBoutransfersLabel_creditacct}"/>
+                    <h:outputText value="#{boutransfersController.selected.creditacct}" title="#{bundle.ViewBoutransfersTitle_creditacct}"/>
+                    <h:outputText value="#{bundle.ViewBoutransfersLabel_bankstaffid}"/>
+                    <h:outputText value="#{boutransfersController.selected.bankstaffid}" title="#{bundle.ViewBoutransfersTitle_bankstaffid}"/>
+                    <h:outputText value="#{bundle.ViewBoutransfersLabel_govtstaffid}"/>
+                    <h:outputText value="#{boutransfersController.selected.govtstaffid}" title="#{bundle.ViewBoutransfersTitle_govtstaffid}"/>
+                    <h:outputText value="#{bundle.ViewBoutransfersLabel_casecode5}"/>
+                    <h:outputText value="#{boutransfersController.selected.casecode5}" title="#{bundle.ViewBoutransfersTitle_casecode5}"/>
+                    <h:outputText value="#{bundle.ViewBoutransfersLabel_itemcode}"/>
+                    <h:outputText value="#{boutransfersController.selected.itemcode}" title="#{bundle.ViewBoutransfersTitle_itemcode}"/>
+                    <h:outputText value="#{bundle.ViewBoutransfersLabel_entityCode}"/>
+                    <h:outputText value="#{boutransfersController.selected.entityCode}" title="#{bundle.ViewBoutransfersTitle_entityCode}"/>
+                    <h:outputText value="#{bundle.ViewBoutransfersLabel_workplanid}"/>
+                    <h:outputText value="#{boutransfersController.selected.workplanid}" title="#{bundle.ViewBoutransfersTitle_workplanid}"/>
+                    <h:outputText value="#{bundle.ViewBoutransfersLabel_reqid}"/>
+                    <h:outputText value="#{boutransfersController.selected.reqid}" title="#{bundle.ViewBoutransfersTitle_reqid}"/>
+                    <h:outputText value="#{bundle.ViewBoutransfersLabel_craccstat}"/>
+                    <h:outputText value="#{boutransfersController.selected.craccstat}" title="#{bundle.ViewBoutransfersTitle_craccstat}"/>
+                    <h:outputText value="#{bundle.ViewBoutransfersLabel_limitamt}"/>
+                    <h:outputText value="#{boutransfersController.selected.limitamt}" title="#{bundle.ViewBoutransfersTitle_limitamt}"/>
+                    <h:outputText value="#{bundle.ViewBoutransfersLabel_timestamp5}"/>
+                    <h:outputText value="#{boutransfersController.selected.timestamp5}" title="#{bundle.ViewBoutransfersTitle_timestamp5}">
+                        <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                    </h:outputText>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{boutransfersController.destroyAndView}" value="#{bundle.ViewBoutransfersDestroyLink}"/>
+                <br />
+                <br />
+                <h:link outcome="Edit" value="#{bundle.ViewBoutransfersEditLink}"/>
+                <br />
+                <h:commandLink action="#{boutransfersController.prepareCreate}" value="#{bundle.ViewBoutransfersCreateLink}" />
+                <br />
+                <h:commandLink action="#{boutransfersController.prepareList}" value="#{bundle.ViewBoutransfersShowAllLink}"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.ViewBoutransfersIndexLink}"/>
+
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

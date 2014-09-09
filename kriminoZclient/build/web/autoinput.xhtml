@@ -1,0 +1,110 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://java.sun.com/jsf/core"
+      >
+
+    <body>
+
+        <ui:composition template="./WEB-INF/krimino-template/krimino-template.xhtml">
+
+            <ui:define name="content">
+
+                <h:form>
+                     <h:panelGrid columns="3"> 
+                        <h:inputText value="#{mainBean1.csno}" title ="cn" id="cn" required="false"/>
+                        <h:commandButton action="test" value="Add Case" />
+                          
+                   
+                    </h:panelGrid>
+                    <h:panelGrid columns="3"> 
+                       
+                        <h:commandButton action="show1" value="Process" />
+
+                    
+
+                    </h:panelGrid>
+                    <h:outputText value="----------------------------------------------------------------------------------------------------------
+                                  " style="color: #00f">            </h:outputText>
+                    <br></br>
+<!--                    <h:panelGrid columns="4"> 
+                        <h:outputText value= "Central Bank Authorized Amount: ">      </h:outputText>
+
+                        <p:selectOneMenu  >
+                            <f:selectItem itemLabel="Pick One" itemValue="" />
+                            <f:selectItem itemLabel="Greater Than" itemValue="1" />
+                            <f:selectItem itemLabel="Less Than" itemValue="2"/>
+                            <f:selectItem itemLabel="Equal To" itemValue="3"/>
+                        </p:selectOneMenu>
+
+                        <h:outputText value= "Budget Amount">            </h:outputText>
+                        <h:inputText value="" title ="bgamt" id="bgamt" required="false"/>
+                    </h:panelGrid>
+                    <br></br>-->
+                    <h:panelGrid columns="4"> 
+                        <h:outputText value= "Personal Account Transactions: ">      </h:outputText>
+
+                        <h:selectOneMenu value="#{autoBean.transymb}" id="s1"  >
+                            <f:selectItem itemLabel="Pick One" itemValue="GreaterThan" />
+                            <f:selectItem itemLabel="GreaterThan" itemValue="GreaterThan" />
+                            <f:selectItem itemLabel="LessThan" itemValue="LessThan"/>
+                            <f:selectItem itemLabel="EqualTo" itemValue="EqualTo"/>
+                        </h:selectOneMenu>
+                        <h:inputText value="#{autoBean.pamt}" title ="pamt" id="pamt" required="false"/>
+
+                    </h:panelGrid>
+                    <br></br>
+                     <h:panelGrid columns="4"> 
+                        <h:outputText value= "Personal Account Transfers: ">      </h:outputText>
+
+                        <p:selectOneMenu  value="#{autoBean.tfsymb}" id="s2" >
+                            <f:selectItem itemLabel="Pick One" itemValue="GreaterThan" />
+                            <f:selectItem itemLabel="GreaterThan" itemValue="GreaterThan" />
+                            <f:selectItem itemLabel="LessThan" itemValue="LessThan"/>
+                            <f:selectItem itemLabel="EqualTo" itemValue="EqualTo"/>
+                        </p:selectOneMenu>
+                        <h:inputText value="#{autoBean.tfamt}" title ="tfamt" id="tfamt" required="false"/>
+
+                    </h:panelGrid>
+                    <br></br>
+                    <h:panelGrid columns="4"> 
+                        <h:outputText value= "Other Income: ">      </h:outputText>
+
+                        <p:selectOneMenu value="#{autoBean.incsymb}" id="s3">
+                            <f:selectItem itemLabel="Pick One" itemValue="GreaterThan" />
+                            <f:selectItem itemLabel="GreaterThan" itemValue="GreaterThan" />
+                            <f:selectItem itemLabel="LessThan" itemValue="LessThan"/>
+                            <f:selectItem itemLabel="EqualTo" itemValue="EqualTo"/>
+                        </p:selectOneMenu>
+
+                        <h:inputText value="#{autoBean.inamt}" title ="inamt" id="inamt" required="false"/>
+                    </h:panelGrid>
+                    <br></br>
+                    <h:panelGrid columns="4"> 
+                        <h:outputText value= "Assets Market Value: ">      </h:outputText>
+
+                        <p:selectOneMenu value="#{autoBean.assetsymb}" id="s4">
+                            <f:selectItem itemLabel="Pick One" itemValue="GreaterThan" />
+                            <f:selectItem itemLabel="GreaterThan" itemValue="GreaterThan" />
+                            <f:selectItem itemLabel="LessThan" itemValue="LessThan"/>
+                            <f:selectItem itemLabel="EqualTo" itemValue="EqualTo"/>
+                        </p:selectOneMenu>
+                        <h:inputText value="#{autoBean.assetval}" title ="assval" id="assval" required="false"/>
+
+                    </h:panelGrid>
+                    <br></br>
+                    <h:outputText value="----------------------------------------------------------------------------------------------------------
+                                  " style="color: #00f">            </h:outputText>
+                </h:form>
+             
+            </ui:define>
+
+
+
+        </ui:composition>
+
+    </body>
+</html>

@@ -1,0 +1,30 @@
+ \input setbmp
+\section{System Implementation}
+
+\noindent The tool is a JavaEE6 web application was developed using the Netbeans 7.2.1 IDE (Integrated Development Environment) with the JSF 2.1 framework. A presentation-oriented web application generates interactive web pages containing various types of markup language (HTML, XHTML, XML, and so on) and dynamic content in response to requests.
+
+\noindent The data source is a MySQL database that generates events on request from the user via the managed bean. The CEP engine used is Esper 4.8.0 with support CSV files and logging capabilities. JavaEE6 is a collection of APIs that simplifies the application development process and produces fast, reliable and secure applications.
+
+\subsection{Client Tier}
+
+\noindent This consists of dynamic web pages (XHTML) with capabilities to communicate with managed bean classes designed using the JSF 2.1 framework. Java Server Faces technology builds on Servlets and JSP technology and provides a user interface component framework for web applications.
+
+\subsection{Business Tier/JavaEE Server}
+
+\noindent This contains JSF pages (servlets) and managed beans (POJOs) that describe the business logic and both reside on the JavaEE server. The Expression Language is used to link the client web pages programmatically to the managed beans that expose getters and setters. This is where the Esper engine is configured and programmed to receive events and respond to the client with results.
+
+\noindent Esper is an Event Stream Processing (ESP) and event correlation engine (CEP, Complex Event Processing). Targeted to real-time Event Driven Architectures (EDA), Esper is capable of triggering custom actions written as Plain Old Java Objects (POJO) when event conditions occur among event streams. It is designed for high-volume event correlation where millions of events coming in would make it impossible to store them all to later query them using classical database architecture.
+
+\subsection{Database Server}
+
+\noindent A database was created using MySQL 5.5 to record and store all activities related to a case under investigation. This data is then retrieved from the database using the JPA API and converted to events by the managed bean before it is sent to the Esper CEP engine for processing. The JPA provides Java developers with an object/relational mapping facility for managing relational data in Java applications.
+
+\subsection{System 3-Tier Architecture}
+
+\begin{center}
+\begin{figure}[h]
+\centerbmp{14cm}{8cm}{3t.bmp}
+\caption{3-Tier Architecture}
+
+\end{figure}
+\end{center}

@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ListCasetransTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:form styleClass="jsfcrud_list_form">
+                <h:panelGroup id="messagePanel" layout="block">
+                    <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+                </h:panelGroup>
+                <h:outputText escape="false" value="#{bundle.ListCasetransEmpty}" rendered="#{casetransController.items.rowCount == 0}"/>
+                <h:panelGroup rendered="#{casetransController.items.rowCount > 0}">
+                    <h:outputText value="#{casetransController.pagination.pageFirstItem + 1}..#{casetransController.pagination.pageLastItem + 1}/#{casetransController.pagination.itemsCount}"/>&nbsp;
+                    <h:commandLink action="#{casetransController.previous}" value="#{bundle.Previous} #{casetransController.pagination.pageSize}" rendered="#{casetransController.pagination.hasPreviousPage}"/>&nbsp;
+                    <h:commandLink action="#{casetransController.next}" value="#{bundle.Next} #{casetransController.pagination.pageSize}" rendered="#{casetransController.pagination.hasNextPage}"/>&nbsp;
+                    <h:dataTable value="#{casetransController.items}" var="item" border="0" cellpadding="2" cellspacing="0" rowClasses="jsfcrud_odd_row,jsfcrud_even_row" rules="all" style="border:solid 1px">
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListCasetransTitle_transactionid}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.transactionid}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListCasetransTitle_transdate}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.transdate}">
+                                <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                            </h:outputText>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListCasetransTitle_transcode}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.transcode}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListCasetransTitle_transAmount}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.transAmount}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListCasetransTitle_transType}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.transType}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListCasetransTitle_transaccount}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.transaccount}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListCasetransTitle_cases}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.cases}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListCasetransTitle_timestamp2}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.timestamp2}">
+                                <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                            </h:outputText>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="&nbsp;"/>
+                            </f:facet>
+                            <h:commandLink action="#{casetransController.prepareView}" value="#{bundle.ListCasetransViewLink}"/>
+                            <h:outputText value=" "/>
+                            <h:commandLink action="#{casetransController.prepareEdit}" value="#{bundle.ListCasetransEditLink}"/>
+                            <h:outputText value=" "/>
+                            <h:commandLink action="#{casetransController.destroy}" value="#{bundle.ListCasetransDestroyLink}"/>
+                        </h:column>
+                    </h:dataTable>
+                </h:panelGroup>
+                <br />
+                <h:commandLink action="#{casetransController.prepareCreate}" value="#{bundle.ListCasetransCreateLink}"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.ListCasetransIndexLink}"/>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

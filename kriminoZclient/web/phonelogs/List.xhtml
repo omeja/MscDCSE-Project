@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ListPhonelogsTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:form styleClass="jsfcrud_list_form">
+                <h:panelGroup id="messagePanel" layout="block">
+                    <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+                </h:panelGroup>
+                <h:outputText escape="false" value="#{bundle.ListPhonelogsEmpty}" rendered="#{phonelogsController.items.rowCount == 0}"/>
+                <h:panelGroup rendered="#{phonelogsController.items.rowCount > 0}">
+                    <h:outputText value="#{phonelogsController.pagination.pageFirstItem + 1}..#{phonelogsController.pagination.pageLastItem + 1}/#{phonelogsController.pagination.itemsCount}"/>&nbsp;
+                    <h:commandLink action="#{phonelogsController.previous}" value="#{bundle.Previous} #{phonelogsController.pagination.pageSize}" rendered="#{phonelogsController.pagination.hasPreviousPage}"/>&nbsp;
+                    <h:commandLink action="#{phonelogsController.next}" value="#{bundle.Next} #{phonelogsController.pagination.pageSize}" rendered="#{phonelogsController.pagination.hasNextPage}"/>&nbsp;
+                    <h:dataTable value="#{phonelogsController.items}" var="item" border="0" cellpadding="2" cellspacing="0" rowClasses="jsfcrud_odd_row,jsfcrud_even_row" rules="all" style="border:solid 1px">
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListPhonelogsTitle_caseCode}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.caseCode}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListPhonelogsTitle_callId}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.callId}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListPhonelogsTitle_callDate}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.callDate}">
+                                <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                            </h:outputText>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListPhonelogsTitle_fromNo}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.fromNo}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListPhonelogsTitle_toNo}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.toNo}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListPhonelogsTitle_cases}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.cases}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListPhonelogsTitle_requestID}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.requestID}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListPhonelogsTitle_timestamp1}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.timestamp1}">
+                                <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                            </h:outputText>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="&nbsp;"/>
+                            </f:facet>
+                            <h:commandLink action="#{phonelogsController.prepareView}" value="#{bundle.ListPhonelogsViewLink}"/>
+                            <h:outputText value=" "/>
+                            <h:commandLink action="#{phonelogsController.prepareEdit}" value="#{bundle.ListPhonelogsEditLink}"/>
+                            <h:outputText value=" "/>
+                            <h:commandLink action="#{phonelogsController.destroy}" value="#{bundle.ListPhonelogsDestroyLink}"/>
+                        </h:column>
+                    </h:dataTable>
+                </h:panelGroup>
+                <br />
+                <h:commandLink action="#{phonelogsController.prepareCreate}" value="#{bundle.ListPhonelogsCreateLink}"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.ListPhonelogsIndexLink}"/>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

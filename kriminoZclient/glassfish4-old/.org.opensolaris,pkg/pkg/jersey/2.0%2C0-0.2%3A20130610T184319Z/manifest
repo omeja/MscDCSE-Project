@@ -1,0 +1,34 @@
+set name=fmri value=pkg://release.glassfish.org/jersey@2.0,0-0.2:20130610T184319Z
+set name=authority value=release.glassfish.org
+set name=info.classification value="Web Services"
+set name=pkg.description value="Jersey core runtime libraries including some 3rd party dependencies.  Jersey is the open source (under dual CDDL+GPL license) JAX-RS (JSR 339) Reference Implementation for building RESTful Web services.  But, it is also more than the Reference Implementation.  Jersey provides additional APIs and extension points (SPIs)  so that developers may extend Jersey to suite their needs."
+set name=pkg.summary value="Jersey 2 Core, RESTful Web services for GlassFish"
+depend fmri=pkg:/glassfish-common type=require
+depend fmri=pkg:/glassfish-nucleus@3.0 type=require
+license 8741fa556feea4ca58ec28abc47de0bf9d5b39a3 chash=28b7cfba8f297b99296afc231955dc90e8d76d47 license="CDDL and GPL v2 with classpath exception" pkg.csize=12394 pkg.size=38052
+dir group=sys mode=0755 owner=root path=glassfish
+dir group=sys mode=0755 owner=root path=glassfish/modules
+file 7f25b2466aab670132be6e5bcaf8a28870c3c9b8 chash=c38d43b3e8d2584c5b8751c4a6bf8c9f794fcf90 group=sys mode=0644 owner=root path=glassfish/modules/guava.jar pkg.csize=1915117 pkg.size=2138738
+file 9d2286332b97bb3c41b774b5921c08b405cf9bf2 chash=68c22efa6960d23f312dea10211cab00a0db2708 group=sys mode=0644 owner=root path=glassfish/modules/jackson-core-asl.jar pkg.csize=211771 pkg.size=226971
+file cdd82847e9ffa8740f2e77ad00ec7922acc9f9a4 chash=d25cd9d9d26e9c709fa0bdcf2c8ba3ec04bd81f2 group=sys mode=0644 owner=root path=glassfish/modules/jackson-jaxrs.jar pkg.csize=16257 pkg.size=17892
+file cefca922fae52ddb20c9fbe904757a5d404013e6 chash=4e20935e12502494a747554591762d20cfe90b43 group=sys mode=0644 owner=root path=glassfish/modules/jackson-mapper-asl.jar pkg.csize=686318 pkg.size=761344
+file 869c95fd17e4cf3b6f643102dd28e16df5e1c9c0 chash=b427310369586aad010b55a69b581ad1aac119fd group=sys mode=0644 owner=root path=glassfish/modules/jackson-xc.jar pkg.csize=24467 pkg.size=26392
+file c206bdafacc90c11cf4fb22b2ca59a656b718a75 chash=96bbe04223e8ee13f78c6d3ca54ef7cb4bd389b2 group=sys mode=0644 owner=root path=glassfish/modules/javax.ws.rs-api.jar pkg.csize=95240 pkg.size=109582
+file 1d7ea1ab3abde6990072a4fa90a5ff9144ed5673 chash=9c7ab6711601e34ad4656e5d71c9aa5a65a1c88f group=sys mode=0644 owner=root path=glassfish/modules/jersey-bean-validation.jar pkg.csize=29916 pkg.size=35620
+file 8105e355db3b1f7396ec0634907cf07ee06e38e0 chash=eb313cb54aa5db9d36db4aa18d457e233cde0952 group=sys mode=0644 owner=root path=glassfish/modules/jersey-client.jar pkg.csize=100427 pkg.size=112229
+file b9b2646f37d44121163e10bc2a9f527289fb127a chash=5bf6f89d20d5a4a7b1f00b980af1a24a896dfbb6 group=sys mode=0644 owner=root path=glassfish/modules/jersey-common.jar pkg.csize=503833 pkg.size=566892
+file 22a87717c2175215392e9c7117b006406ce8d6db chash=5a1bdcc95d706e994b660d2e50972dacdf24896c group=sys mode=0644 owner=root path=glassfish/modules/jersey-container-grizzly2-http.jar pkg.csize=18848 pkg.size=23717
+file dab275076beb5cf0110f683070e223fcbc6a80e2 chash=fa3266597d2712933358757fac9d4ad617c559e1 group=sys mode=0644 owner=root path=glassfish/modules/jersey-container-servlet-core.jar pkg.csize=41809 pkg.size=49003
+file a90df45a3623aa1299da8d82f6e0f9f3bfbd792f chash=6e54dbd26913900f4d509424a18ee5e941bd1a2b group=sys mode=0644 owner=root path=glassfish/modules/jersey-container-servlet.jar pkg.csize=11394 pkg.size=14410
+file 8efa235fcb96aba8d729aa8779674d257b63754b chash=02452f02996aa79f05d0a414a3e64575f6bceb65 group=sys mode=0644 owner=root path=glassfish/modules/jersey-gf-cdi.jar pkg.csize=15998 pkg.size=19125
+file 2e988b1897048920657bef8850c89eff4da3ae84 chash=30a295c24679c4b9c86a5480c5dad18678cd7be2 group=sys mode=0644 owner=root path=glassfish/modules/jersey-gf-ejb.jar pkg.csize=14542 pkg.size=17239
+file 93d7db94c4fe714a198ed6498697f892b391e567 chash=c86ba662b1748d67bff927e7776fd2d4ac1e5ef6 group=sys mode=0644 owner=root path=glassfish/modules/jersey-media-json-jackson.jar pkg.csize=3419 pkg.size=4696
+file 3a2c9be4dafd310f23fbbe2cdc5a3b127c5dae5d chash=ccc826d3b7612f1c78aaf466f7119c604564fde6 group=sys mode=0644 owner=root path=glassfish/modules/jersey-media-json-jettison.jar pkg.csize=37174 pkg.size=44516
+file 1ce59fac0944504441e6d522ad4ca5e995c1c861 chash=79319a52b7c73253bf35fc61da5cb2b02a98d781 group=sys mode=0644 owner=root path=glassfish/modules/jersey-media-json-processing.jar pkg.csize=4283 pkg.size=6112
+file fc0c235926804fe42dc5e779011b9807f21b7dd1 chash=3c048bc16b2ba6bd4f4f7684de6050976b4a9371 group=sys mode=0644 owner=root path=glassfish/modules/jersey-media-moxy.jar pkg.csize=12359 pkg.size=14916
+file 0e4052b75ebefb729e8a42f0770f5fb70a661227 chash=088108ff80386c87f1884f0594142871591e97d7 group=sys mode=0644 owner=root path=glassfish/modules/jersey-media-multipart.jar pkg.csize=52078 pkg.size=61301
+file 672cb1ca04a8883e30d8a85183722ee306ad673b chash=ba99d232abb0d3f07cd45dafe731163760cbe155 group=sys mode=0644 owner=root path=glassfish/modules/jersey-media-sse.jar pkg.csize=25924 pkg.size=30491
+file a56cc12afd5e68bb4ca54547950059ffc543d2b7 chash=4426373c84c52906e50b68e62f66c488bf736b46 group=sys mode=0644 owner=root path=glassfish/modules/jersey-mvc-jsp.jar pkg.csize=14164 pkg.size=17410
+file 2ac64e6177337c648c08da5b134fb238f5730af1 chash=2e701141456469a16c20ec5fc0defd0a36621ea4 group=sys mode=0644 owner=root path=glassfish/modules/jersey-mvc.jar pkg.csize=26730 pkg.size=31420
+file aae59c7ff98a15728fd8d4dc459a3bd95c714a00 chash=3a3991f7bbb2a3cb92f27aa42df0e4049d3aa6f0 group=sys mode=0644 owner=root path=glassfish/modules/jersey-server.jar pkg.csize=581105 pkg.size=677801
+file 012a82b22a3bdfef6a1e9bf133437b54105ff9ac chash=641cbc1fbbdb7c6c519cfce6d56bd78ead5bf5ab group=sys mode=0644 owner=root path=glassfish/modules/jettison.jar pkg.csize=70369 pkg.size=77949

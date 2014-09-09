@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.CreateIncomeTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.CreateIncomeLabel_itemno}" for="itemno" />
+                    <h:inputText id="itemno" value="#{incomeController.selected.itemno}" title="#{bundle.CreateIncomeTitle_itemno}" required="true" requiredMessage="#{bundle.CreateIncomeRequiredMessage_itemno}"/>
+                    <h:outputLabel value="#{bundle.CreateIncomeLabel_description}" for="description" />
+                    <h:inputText id="description" value="#{incomeController.selected.description}" title="#{bundle.CreateIncomeTitle_description}" />
+                    <h:outputLabel value="#{bundle.CreateIncomeLabel_incometype}" for="incometype" />
+                    <h:inputText id="incometype" value="#{incomeController.selected.incometype}" title="#{bundle.CreateIncomeTitle_incometype}" />
+                    <h:outputLabel value="#{bundle.CreateIncomeLabel_frequency}" for="frequency" />
+                    <h:inputText id="frequency" value="#{incomeController.selected.frequency}" title="#{bundle.CreateIncomeTitle_frequency}" />
+                    <h:outputLabel value="#{bundle.CreateIncomeLabel_amount}" for="amount" />
+                    <h:inputText id="amount" value="#{incomeController.selected.amount}" title="#{bundle.CreateIncomeTitle_amount}" />
+                    <h:outputLabel value="#{bundle.CreateIncomeLabel_casecode}" for="casecode" />
+                    <h:selectOneMenu id="casecode" value="#{incomeController.selected.casecode}" title="#{bundle.CreateIncomeTitle_casecode}" >
+                        <f:selectItems value="#{casesController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                    <h:outputLabel value="#{bundle.CreateIncomeLabel_timestamp6}" for="timestamp6" />
+                    <h:inputText id="timestamp6" value="#{incomeController.selected.timestamp6}" title="#{bundle.CreateIncomeTitle_timestamp6}" >
+                        <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                    </h:inputText>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{incomeController.create}" value="#{bundle.CreateIncomeSaveLink}" />
+                <br />
+                <br />
+                <h:commandLink action="#{incomeController.prepareList}" value="#{bundle.CreateIncomeShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.CreateIncomeIndexLink}"/>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

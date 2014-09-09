@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ListUserrightsTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:form styleClass="jsfcrud_list_form">
+                <h:panelGroup id="messagePanel" layout="block">
+                    <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+                </h:panelGroup>
+                <h:outputText escape="false" value="#{bundle.ListUserrightsEmpty}" rendered="#{userrightsController.items.rowCount == 0}"/>
+                <h:panelGroup rendered="#{userrightsController.items.rowCount > 0}">
+                    <h:outputText value="#{userrightsController.pagination.pageFirstItem + 1}..#{userrightsController.pagination.pageLastItem + 1}/#{userrightsController.pagination.itemsCount}"/>&nbsp;
+                    <h:commandLink action="#{userrightsController.previous}" value="#{bundle.Previous} #{userrightsController.pagination.pageSize}" rendered="#{userrightsController.pagination.hasPreviousPage}"/>&nbsp;
+                    <h:commandLink action="#{userrightsController.next}" value="#{bundle.Next} #{userrightsController.pagination.pageSize}" rendered="#{userrightsController.pagination.hasNextPage}"/>&nbsp;
+                    <h:dataTable value="#{userrightsController.items}" var="item" border="0" cellpadding="2" cellspacing="0" rowClasses="jsfcrud_odd_row,jsfcrud_even_row" rules="all" style="border:solid 1px">
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListUserrightsTitle_userID}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.userID}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListUserrightsTitle_dateCreated}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.dateCreated}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListUserrightsTitle_creater}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.creater}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListUserrightsTitle_userAuthority}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.userAuthority}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListUserrightsTitle_staffLevel}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.staffLevel}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListUserrightsTitle_entity}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.entity}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListUserrightsTitle_casecode}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.casecode}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="&nbsp;"/>
+                            </f:facet>
+                            <h:commandLink action="#{userrightsController.prepareView}" value="#{bundle.ListUserrightsViewLink}"/>
+                            <h:outputText value=" "/>
+                            <h:commandLink action="#{userrightsController.prepareEdit}" value="#{bundle.ListUserrightsEditLink}"/>
+                            <h:outputText value=" "/>
+                            <h:commandLink action="#{userrightsController.destroy}" value="#{bundle.ListUserrightsDestroyLink}"/>
+                        </h:column>
+                    </h:dataTable>
+                </h:panelGroup>
+                <br />
+                <h:commandLink action="#{userrightsController.prepareCreate}" value="#{bundle.ListUserrightsCreateLink}"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.ListUserrightsIndexLink}"/>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

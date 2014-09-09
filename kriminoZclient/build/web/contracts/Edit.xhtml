@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.EditContractsTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.EditContractsLabel_contractID}" for="contractID" />
+                    <h:inputText id="contractID" value="#{contractsController.selected.contractID}" title="#{bundle.EditContractsTitle_contractID}" required="true" requiredMessage="#{bundle.EditContractsRequiredMessage_contractID}"/>
+                    <h:outputLabel value="#{bundle.EditContractsLabel_contractAcct}" for="contractAcct" />
+                    <h:inputText id="contractAcct" value="#{contractsController.selected.contractAcct}" title="#{bundle.EditContractsTitle_contractAcct}" />
+                    <h:outputLabel value="#{bundle.EditContractsLabel_contractAmt}" for="contractAmt" />
+                    <h:inputText id="contractAmt" value="#{contractsController.selected.contractAmt}" title="#{bundle.EditContractsTitle_contractAmt}" />
+                    <h:outputLabel value="#{bundle.EditContractsLabel_contractor}" for="contractor" />
+                    <h:inputText id="contractor" value="#{contractsController.selected.contractor}" title="#{bundle.EditContractsTitle_contractor}" />
+                    <h:outputLabel value="#{bundle.EditContractsLabel_workPlanID}" for="workPlanID" />
+                    <h:selectOneMenu id="workPlanID" value="#{contractsController.selected.workPlanID}" title="#{bundle.EditContractsTitle_workPlanID}" >
+                        <f:selectItems value="#{workplanController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                    <h:outputLabel value="#{bundle.EditContractsLabel_casecode}" for="casecode" />
+                    <h:selectOneMenu id="casecode" value="#{contractsController.selected.casecode}" title="#{bundle.EditContractsTitle_casecode}" >
+                        <f:selectItems value="#{casesController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                    <h:outputLabel value="#{bundle.EditContractsLabel_timestamp9}" for="timestamp9" />
+                    <h:inputText id="timestamp9" value="#{contractsController.selected.timestamp9}" title="#{bundle.EditContractsTitle_timestamp9}" >
+                        <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                    </h:inputText>
+                </h:panelGrid>
+                <h:commandLink action="#{contractsController.update}" value="#{bundle.EditContractsSaveLink}"/>
+                <br />
+                <br />
+                <h:link outcome="View" value="#{bundle.EditContractsViewLink}"/>
+                <br />
+                <h:commandLink action="#{contractsController.prepareList}" value="#{bundle.EditContractsShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.EditContractsIndexLink}" />
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

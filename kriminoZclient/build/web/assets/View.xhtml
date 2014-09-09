@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ViewAssetsTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputText value="#{bundle.ViewAssetsLabel_assetcode}"/>
+                    <h:outputText value="#{assetsController.selected.assetcode}" title="#{bundle.ViewAssetsTitle_assetcode}"/>
+                    <h:outputText value="#{bundle.ViewAssetsLabel_assettype}"/>
+                    <h:outputText value="#{assetsController.selected.assettype}" title="#{bundle.ViewAssetsTitle_assettype}"/>
+                    <h:outputText value="#{bundle.ViewAssetsLabel_marketvalue}"/>
+                    <h:outputText value="#{assetsController.selected.marketvalue}" title="#{bundle.ViewAssetsTitle_marketvalue}"/>
+                    <h:outputText value="#{bundle.ViewAssetsLabel_acquiredate}"/>
+                    <h:outputText value="#{assetsController.selected.acquiredate}" title="#{bundle.ViewAssetsTitle_acquiredate}">
+                        <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                    </h:outputText>
+                    <h:outputText value="#{bundle.ViewAssetsLabel_acquirecost}"/>
+                    <h:outputText value="#{assetsController.selected.acquirecost}" title="#{bundle.ViewAssetsTitle_acquirecost}"/>
+                    <h:outputText value="#{bundle.ViewAssetsLabel_acquiremode}"/>
+                    <h:outputText value="#{assetsController.selected.acquiremode}" title="#{bundle.ViewAssetsTitle_acquiremode}"/>
+                    <h:outputText value="#{bundle.ViewAssetsLabel_sourceoffunds}"/>
+                    <h:outputText value="#{assetsController.selected.sourceoffunds}" title="#{bundle.ViewAssetsTitle_sourceoffunds}"/>
+                    <h:outputText value="#{bundle.ViewAssetsLabel_casecode}"/>
+                    <h:outputText value="#{assetsController.selected.casecode}" title="#{bundle.ViewAssetsTitle_casecode}"/>
+                    <h:outputText value="#{bundle.ViewAssetsLabel_timestamp4}"/>
+                    <h:outputText value="#{assetsController.selected.timestamp4}" title="#{bundle.ViewAssetsTitle_timestamp4}">
+                        <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                    </h:outputText>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{assetsController.destroyAndView}" value="#{bundle.ViewAssetsDestroyLink}"/>
+                <br />
+                <br />
+                <h:link outcome="Edit" value="#{bundle.ViewAssetsEditLink}"/>
+                <br />
+                <h:commandLink action="#{assetsController.prepareCreate}" value="#{bundle.ViewAssetsCreateLink}" />
+                <br />
+                <h:commandLink action="#{assetsController.prepareList}" value="#{bundle.ViewAssetsShowAllLink}"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.ViewAssetsIndexLink}"/>
+
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

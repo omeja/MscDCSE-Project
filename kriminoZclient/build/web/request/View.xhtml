@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ViewRequestTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputText value="#{bundle.ViewRequestLabel_filenme}"/>
+                    <h:outputText value="#{requestController.selected.filenme}" title="#{bundle.ViewRequestTitle_filenme}"/>
+                    <h:outputText value="#{bundle.ViewRequestLabel_debitaccount}"/>
+                    <h:outputText value="#{requestController.selected.debitaccount}" title="#{bundle.ViewRequestTitle_debitaccount}"/>
+                    <h:outputText value="#{bundle.ViewRequestLabel_creditaccount}"/>
+                    <h:outputText value="#{requestController.selected.creditaccount}" title="#{bundle.ViewRequestTitle_creditaccount}"/>
+                    <h:outputText value="#{bundle.ViewRequestLabel_amount}"/>
+                    <h:outputText value="#{requestController.selected.amount}" title="#{bundle.ViewRequestTitle_amount}"/>
+                    <h:outputText value="#{bundle.ViewRequestLabel_reqDate}"/>
+                    <h:outputText value="#{requestController.selected.reqDate}" title="#{bundle.ViewRequestTitle_reqDate}">
+                        <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                    </h:outputText>
+                    <h:outputText value="#{bundle.ViewRequestLabel_workplnId}"/>
+                    <h:outputText value="#{requestController.selected.workplnId}" title="#{bundle.ViewRequestTitle_workplnId}"/>
+                    <h:outputText value="#{bundle.ViewRequestLabel_userId}"/>
+                    <h:outputText value="#{requestController.selected.userId}" title="#{bundle.ViewRequestTitle_userId}"/>
+                    <h:outputText value="#{bundle.ViewRequestLabel_entcode}"/>
+                    <h:outputText value="#{requestController.selected.entcode}" title="#{bundle.ViewRequestTitle_entcode}"/>
+                    <h:outputText value="#{bundle.ViewRequestLabel_casecode}"/>
+                    <h:outputText value="#{requestController.selected.casecode}" title="#{bundle.ViewRequestTitle_casecode}"/>
+                    <h:outputText value="#{bundle.ViewRequestLabel_timestamp7}"/>
+                    <h:outputText value="#{requestController.selected.timestamp7}" title="#{bundle.ViewRequestTitle_timestamp7}">
+                        <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                    </h:outputText>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{requestController.destroyAndView}" value="#{bundle.ViewRequestDestroyLink}"/>
+                <br />
+                <br />
+                <h:link outcome="Edit" value="#{bundle.ViewRequestEditLink}"/>
+                <br />
+                <h:commandLink action="#{requestController.prepareCreate}" value="#{bundle.ViewRequestCreateLink}" />
+                <br />
+                <h:commandLink action="#{requestController.prepareList}" value="#{bundle.ViewRequestShowAllLink}"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.ViewRequestIndexLink}"/>
+
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

@@ -1,0 +1,52 @@
+# PCTeX Project File, Version 1.1
+	name: mainpage
+	texformat: LATEX
+mainpage.TEX
+	wndpos: 1 -1 -1 -8 -30 50 50 1450 521
+	zorder: 5
+	edit: 401
+project-title.tex
+	wndpos: 1 -1 -1 -8 -30 75 75 1421 590
+	zorder: 2
+	edit: 95
+introduction.tex
+	wndpos: 1 -1 -1 -1 -1 0 0 1346 515
+	zorder: 6
+	edit: 0
+literature.tex
+methodology.tex
+	wndpos: 1 -1 -1 -8 -30 200 200 1550 719
+	zorder: 1
+	edit: 13436
+design.tex
+implementation.tex
+mainpage.aux
+project-title.aux
+introduction.aux
+literature.aux
+methodology.aux
+design.aux
+implementation.aux
+mainpage.log
+mainpage.toc
+mainpage.DVI
+	wndpos: 3 -1 -1 -8 -30 175 175 1525 694
+	zorder: 0
+	view: 43 -2
+mainpage.bbl
+Declaration.aux
+declaration.tex
+introductory-pages.aux
+pattern-detection.aux
+introductory-pages.tex
+pattern-detection.tex
+conclusion.tex
+	wndpos: 1 -1 -1 -8 -30 150 150 1500 669
+	zorder: 3
+	edit: 1466
+conclusion.aux
+appendices.tex
+	wndpos: 1 -1 -1 -1 -1 225 225 1571 740
+	zorder: 4
+	edit: 487
+appendices.aux
