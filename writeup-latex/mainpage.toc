@@ -19,45 +19,42 @@
 \contentsline {subsection}{\numberline {2.5}Complex Event Processing}{9}
 \contentsline {subsection}{\numberline {2.6}Event Processing Engines}{13}
 \contentsline {section}{\numberline {3}CHAPTER THREE: Methodology}{17}
-\contentsline {subsection}{\numberline {3.1}Requirements Gathering}{17}
-\contentsline {subsubsection}{\numberline {3.1.1}Interviews}{17}
-\contentsline {subsubsection}{\numberline {3.1.2}Existing Literature}{18}
+\contentsline {subsection}{\numberline {3.1}Requirements Collection and Analysis}{17}
+\contentsline {subsubsection}{\numberline {3.1.1}Interviews and Literature Review}{17}
+\contentsline {subsubsection}{\numberline {3.1.2}Key System Requirements}{18}
 \contentsline {subsubsection}{\numberline {3.1.3}Use Case}{18}
-\contentsline {subsection}{\numberline {3.2}System Design}{18}
+\contentsline {subsection}{\numberline {3.2}System Design}{19}
 \contentsline {subsubsection}{\numberline {3.2.1}Design Overview}{19}
-\contentsline {subsubsection}{\numberline {3.2.2}Logical Design}{19}
-\contentsline {subsubsection}{\numberline {3.2.3}Application Architectural Overview}{20}
+\contentsline {subsubsection}{\numberline {3.2.2}Logical Design}{20}
+\contentsline {subsubsection}{\numberline {3.2.3}Application Architectural Overview}{21}
 \contentsline {subsubsection}{\numberline {3.2.4}Data Flow Diagram}{21}
-\contentsline {subsection}{\numberline {3.3}Implementation}{21}
-\contentsline {subsubsection}{\numberline {3.3.1}Tools and Platforms}{21}
-\contentsline {subsection}{\numberline {3.4}Using the Java Persistence API to Generate Events}{22}
-\contentsline {subsection}{\numberline {3.5}Processing Events using Esper}{23}
-\contentsline {subsubsection}{\numberline {3.5.1}Binary Tree Index Algorithm in Esper}{25}
-\contentsline {subsubsection}{\numberline {3.5.2}Hash-Based Index Algorithm in Esper}{27}
-\contentsline {subsubsection}{\numberline {3.5.3}Inverted Index Algorithms in Esper}{29}
-\contentsline {subsubsection}{\numberline {3.5.4}Nested Loop Algorithms in Esper}{30}
-\contentsline {subsubsection}{\numberline {3.5.5}Defining Event Objects}{31}
-\contentsline {subsubsection}{\numberline {3.5.6}Configuring the Esper Engine}{32}
-\contentsline {subsubsection}{\numberline {3.5.7}Defining Query Statements and Listeners }{33}
-\contentsline {subsubsection}{\numberline {3.5.8}System Reports}{34}
-\contentsline {subsubsection}{\numberline {3.5.9}Prototyping}{35}
-\contentsline {subsection}{\numberline {3.6}System Testing and Evaluation}{36}
-\contentsline {section}{\numberline {4}CHAPTER FOUR:The Crime Investigation Tool}{37}
-\contentsline {subsection}{\numberline {4.1}Crime Pattern and Parameters}{37}
-\contentsline {subsubsection}{\numberline {4.1.1}Funds Request By Ministry}{37}
-\contentsline {subsubsection}{\numberline {4.1.2}Funds Release By Central Bank (BOU)}{38}
-\contentsline {subsubsection}{\numberline {4.1.3}Emails and Phone Logs Events}{38}
-\contentsline {subsubsection}{\numberline {4.1.4}Payments Event}{38}
-\contentsline {subsection}{\numberline {4.2}Tool Functionality/Operation}{39}
-\contentsline {subsubsection}{\numberline {4.2.1}Client Request}{39}
-\contentsline {subsubsection}{\numberline {4.2.2}System Response}{40}
-\contentsline {section}{\numberline {5}CHAPTER FIVE: Conclusion }{42}
-\contentsline {subsection}{\numberline {5.1}Challenges}{42}
-\contentsline {subsection}{\numberline {5.2}Contribution}{42}
-\contentsline {subsection}{\numberline {5.3}Recommendations}{43}
-\contentsline {subsection}{\numberline {5.4}Future Work}{43}
-\contentsline {section}{\numberline {6}Appendices}{48}
-\contentsline {subsection}{\numberline {6.1}Appendix A : Request for Permission and Approval Letters}{48}
-\contentsline {subsection}{\numberline {6.2}Appendix B : Interview Guidelines and Questions }{50}
-\contentsline {subsubsection}{\numberline {6.2.1}Guidelines}{50}
-\contentsline {subsubsection}{\numberline {6.2.2}Interview Questions}{51}
+\contentsline {subsection}{\numberline {3.3}Implementation}{22}
+\contentsline {subsubsection}{\numberline {3.3.1}Tools and Platforms}{22}
+\contentsline {subsubsection}{\numberline {3.3.2}Using the Java Persistence API to Generate Events}{22}
+\contentsline {subsubsection}{\numberline {3.3.3}The Esper CEP Engine and In-built Algorithms}{24}
+\contentsline {subsubsection}{\numberline {3.3.4}Defining Crime Event Objects in Esper}{32}
+\contentsline {subsubsection}{\numberline {3.3.5}Configuring the Esper Engine}{33}
+\contentsline {subsubsection}{\numberline {3.3.6}Defining Query Statements}{34}
+\contentsline {subsubsection}{\numberline {3.3.7}Defining Listeners for Events}{35}
+\contentsline {subsubsection}{\numberline {3.3.8}System Reports and Views}{35}
+\contentsline {subsubsection}{\numberline {3.3.9}Prototyping}{36}
+\contentsline {subsection}{\numberline {3.4}System Testing and Evaluation}{37}
+\contentsline {section}{\numberline {4}CHAPTER FOUR:The Crime Investigation Tool}{38}
+\contentsline {subsection}{\numberline {4.1}Crime Pattern and Parameters}{38}
+\contentsline {subsubsection}{\numberline {4.1.1}Funds Request By Ministry}{38}
+\contentsline {subsubsection}{\numberline {4.1.2}Funds Release By Central Bank (BOU)}{39}
+\contentsline {subsubsection}{\numberline {4.1.3}Emails and Phone Logs Events}{39}
+\contentsline {subsubsection}{\numberline {4.1.4}Payments Event}{39}
+\contentsline {subsection}{\numberline {4.2}Tool Functionality/Operation}{40}
+\contentsline {subsubsection}{\numberline {4.2.1}Client Request}{40}
+\contentsline {subsubsection}{\numberline {4.2.2}System Response}{41}
+\contentsline {section}{\numberline {5}CHAPTER FIVE: Conclusion }{43}
+\contentsline {subsection}{\numberline {5.1}Challenges}{43}
+\contentsline {subsection}{\numberline {5.2}Contribution}{43}
+\contentsline {subsection}{\numberline {5.3}Recommendations}{44}
+\contentsline {subsection}{\numberline {5.4}Future Work}{44}
+\contentsline {section}{\numberline {6}Appendices}{49}
+\contentsline {subsection}{\numberline {6.1}Appendix A : Request for Permission and Approval Letters}{49}
+\contentsline {subsection}{\numberline {6.2}Appendix B : Interview Guidelines and Questions }{51}
+\contentsline {subsubsection}{\numberline {6.2.1}Guidelines}{51}
+\contentsline {subsubsection}{\numberline {6.2.2}Interview Questions}{52}

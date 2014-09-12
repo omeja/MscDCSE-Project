@@ -1,4 +1,4 @@
-This is TeX, Version 3.14159 (Web2c 7.3.3.1) (format=LATEX 2003.8.21)  5 SEP 2014 11:14
+This is TeX, Version 3.14159 (Web2c 7.3.3.1) (format=LATEX 2003.8.21)  12 SEP 2014 13:55
 **&LATEX mainpage.TEX
 (./mainpage.TEX
 LaTeX2e <2001/06/01>
@@ -215,57 +215,61 @@ Missing character: There is no … in font ptmr7t!
 [17
 
 
-] [18]
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[19] [20]
-Overfull \hbox (5.73752pt too wide) in paragraph at lines 109--110
+] [18] [19] [20] [21]
+Overfull \hbox (5.73752pt too wide) in paragraph at lines 115--116
 []\OT1/ptm/m/n/12 The in-ves-ti-ga-tion tool was de-vel-oped us-ing a range of 
 tools and plat-forms re-flect-ing the MVC(Model
  []
 
-[21] [22] [23]
+[22]
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[24]
+[23] [24]
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[25] [26] [27]
+[25]
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[28]
+[26] [27] [28]
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[29] [30] [31]
+[29]
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[32] [33] [34] [35]) [36]
+[30] [31] [32] [33]
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[34] [35]
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[36]) [37]
 \openout2 = `pattern-detection.aux'.
 
  (./pattern-detection.tex
 (c:/Program Files (x86)/PCTeX/PCTeXv5/texmf-pti/tex/tex/legacy/setbmp.tex)
-[37
+[38
 
 
-] [38] [39]
+] [39] [40]
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-) [40] [41]
+) [41] [42]
 \openout2 = `conclusion.aux'.
 
  (./conclusion.tex
 (c:/Program Files (x86)/PCTeX/PCTeXv5/texmf-pti/tex/tex/legacy/setbmp.tex)
-[42
+[43
 
 
-]) [43] (./mainpage.bbl
+]) [44] (./mainpage.bbl
 LaTeX Font Info:    Try loading font information for OT1+pcr on input line 25.
 
 (c:/Program Files (x86)/PCTeX/PCTeXv5/texmf/tex/latex/psnfss/ot1pcr.fd
@@ -294,7 +298,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 65--71
 ary % 20Trees /
  []
 
-[44
+[45
 
 ]
 Underfull \hbox (badness 10000) in paragraph at lines 81--87
@@ -325,7 +329,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 112--118
 f / Unsorted /
  []
 
-[45]
+[46]
 Underfull \hbox (badness 10000) in paragraph at lines 142--147
 \OT1/pcr/m/n/12 / / www . upf . go . ug / attachments / article / 5 / Annual _ 
 Crime _ Report _
@@ -344,7 +348,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 174--180
 fedcentric . com / collateral /
  []
 
-[46]
+[47]
 Underfull \hbox (badness 3601) in paragraph at lines 208--214
 [][]\OT1/ptm/m/n/12 C. West-phal.  Anatomy of a fi-nan-cial crime [on-line].  $
 \OT1/pcr/m/n/12 Available : https :
@@ -356,14 +360,14 @@ Underfull \hbox (badness 10000) in paragraph at lines 208--214
 paper /
  []
 
-) [47]
+) [48]
 \openout2 = `appendices.aux'.
 
  (./appendices.tex
 (c:/Program Files (x86)/PCTeX/PCTeXv5/texmf-pti/tex/tex/legacy/setbmp.tex)
-[48
+[49
 
-] [49] [50]) [51] (./mainpage.aux (./project-title.aux)
+] [50] [51]) [52] (./mainpage.aux (./project-title.aux)
 (./introductory-pages.aux) (./introduction.aux) (./literature.aux)
 (./methodology.aux) (./pattern-detection.aux) (./conclusion.aux)
 (./appendices.aux)) ) 
@@ -376,4 +380,4 @@ Here is how much of TeX's memory you used:
  14 hyphenation exceptions out of 1000
  25i,7n,24p,1386b,322s stack positions out of 300i,100n,500p,200000b,4000s
 
-Output written on mainpage.dvi (61 pages, 138564 bytes).
+Output written on mainpage.dvi (62 pages, 139384 bytes).

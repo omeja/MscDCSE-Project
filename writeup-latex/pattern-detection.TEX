@@ -1,12 +1,12 @@
 \input setbmp
 \section{CHAPTER FOUR:The Crime Investigation Tool}
 
-\noindent In this chapter we discuss the crime pattern that was built in the tool for purposes of proof of concept, the operation and functionality of the tool and we present the test results based on the test cases in the previous chapter and  in Appendix D.
+\noindent In this chapter we discuss the building blocks of the crime investigation tool, its operation and functionality and finally present the test results based on the parameters presented in in the previous chapter.
 
 
-\subsection{Crime Pattern and Parameters}
+\subsection{Crime Events and Parameters}
 
-\noindent The pattern is made of five major events (Funds Request, Funds Release, Payments, Phone Logs, Email Logs) which together represent the general pattern used.Any violations detected in any of the five events leads to a degree of pattern match.
+\noindent The system was built to support five events representing the investigation pillars for crimes realted to causing financial loss to government(Funds Request, Funds Release, Payments, Phone Logs, Email Logs). The tool provides an interface for users to define criteria for each of the five events to instruct the CEP engine on which fields and values to check.
 
 [Add diagram for flow]
 
@@ -36,7 +36,7 @@
 
 \subsubsection{Emails and Phone Logs Events}
 
-\noindent These are closely linked to the Funds Release event given that before money is released a confirmation email must be sent from the treasury endorsing the request and a phone call must be made from the Central Bank to the Permanent Secretary confirming the authorizer.
+\noindent These are closely linked to the Funds Release event given that before money is released a confirmation email must be sent from the treasury endorsing the request and a phone call must be made from the Central Bank to the Permanent Secretary confirming that he/she authorized the funds request.
 
 \noindent Therefore for these two events,the parameters are ;
 
@@ -60,12 +60,12 @@
 
 \subsubsection{Client Request}
 
-\noindent In the single mode  one case file number is added for processing while in the multi-mode more than one case is selected or added for processing.Selections are made at the different event sections defining conditions for returned records and the request is submitted.
+\noindent The process begins with a case file number being added for processing by the user. The user then defines the parameters to be queried by the CEP engine for the five events. The case file number ensures that only events for a particular case are generated from the database and forwarded to the engine for processing.
 
 \begin{center}
 \begin{figure}[h]
 \centerbmp{14cm}{10cm}{pic1.bmp}
-\caption{Case Input and Selection screen}
+\caption{Case Input and Selection screen(Web Client)}
 
 \end{figure}
 \end{center}
@@ -73,12 +73,12 @@
 
 \subsubsection{System Response}
 
-\noindent The output is form of a single web view and PDF format files depending on the input mode (single or multi-mode).For the multi-mode a PDF file is created for the same number of cases file numbers processed and a single web view for one of the cases as below;
+\noindent On completion of event processing by the engine, events matching the defined criteria are displayed in tabular format to the web or mobile page and a PDF file is concurrently generated to a local location. Additionally, the total numeber of records and a percentage matching rate are computed and displayed at the top of the page.
 
 \begin{center}
 \begin{figure}[h]
 \centerbmp{14cm}{8cm}{pic2.bmp}
-\caption{Web/Mobile View }
+\caption{Web View }
 
 \end{figure}
 \end{center}
@@ -98,4 +98,6 @@
 
 \end{figure}
 \end{center}
+
+\subsection{Test Results and Analysis}
 
