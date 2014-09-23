@@ -40,7 +40,7 @@
 \contentsline {subsubsection}{\numberline {3.3.9}Prototyping}{36}
 \contentsline {subsection}{\numberline {3.4}System Testing and Evaluation}{37}
 \contentsline {section}{\numberline {4}CHAPTER FOUR:The Crime Investigation Tool}{38}
-\contentsline {subsection}{\numberline {4.1}Crime Pattern and Parameters}{38}
+\contentsline {subsection}{\numberline {4.1}Crime Events and Parameters}{38}
 \contentsline {subsubsection}{\numberline {4.1.1}Funds Request By Ministry}{38}
 \contentsline {subsubsection}{\numberline {4.1.2}Funds Release By Central Bank (BOU)}{39}
 \contentsline {subsubsection}{\numberline {4.1.3}Emails and Phone Logs Events}{39}
@@ -48,13 +48,18 @@
 \contentsline {subsection}{\numberline {4.2}Tool Functionality/Operation}{40}
 \contentsline {subsubsection}{\numberline {4.2.1}Client Request}{40}
 \contentsline {subsubsection}{\numberline {4.2.2}System Response}{41}
-\contentsline {section}{\numberline {5}CHAPTER FIVE: Conclusion }{43}
-\contentsline {subsection}{\numberline {5.1}Challenges}{43}
-\contentsline {subsection}{\numberline {5.2}Contribution}{43}
-\contentsline {subsection}{\numberline {5.3}Recommendations}{44}
-\contentsline {subsection}{\numberline {5.4}Future Work}{44}
-\contentsline {section}{\numberline {6}Appendices}{49}
-\contentsline {subsection}{\numberline {6.1}Appendix A : Request for Permission and Approval Letters}{49}
-\contentsline {subsection}{\numberline {6.2}Appendix B : Interview Guidelines and Questions }{51}
-\contentsline {subsubsection}{\numberline {6.2.1}Guidelines}{51}
-\contentsline {subsubsection}{\numberline {6.2.2}Interview Questions}{52}
+\contentsline {subsubsection}{\numberline {4.2.3}Real-time Function}{42}
+\contentsline {subsection}{\numberline {4.3}Test Results and Analysis}{42}
+\contentsline {subsubsection}{\numberline {4.3.1}Events Generation from Database}{42}
+\contentsline {subsubsection}{\numberline {4.3.2}Defining Criteria and Processing Events}{43}
+\contentsline {subsubsection}{\numberline {4.3.3}Output of Computed Results}{43}
+\contentsline {section}{\numberline {5}CHAPTER FIVE: Conclusion }{45}
+\contentsline {subsection}{\numberline {5.1}Challenges}{45}
+\contentsline {subsection}{\numberline {5.2}Contribution}{45}
+\contentsline {subsection}{\numberline {5.3}Recommendations}{46}
+\contentsline {subsection}{\numberline {5.4}Future Work}{46}
+\contentsline {section}{\numberline {6}Appendices}{51}
+\contentsline {subsection}{\numberline {6.1}Appendix A : Request for Permission and Approval Letters}{51}
+\contentsline {subsection}{\numberline {6.2}Appendix B : Interview Guidelines and Questions }{53}
+\contentsline {subsubsection}{\numberline {6.2.1}Guidelines}{53}
+\contentsline {subsubsection}{\numberline {6.2.2}Interview Questions}{54}

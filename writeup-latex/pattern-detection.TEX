@@ -99,5 +99,28 @@
 \end{figure}
 \end{center}
 
+\subsubsection{Real-time Function}
+
+\noindent The system displays in web view updated information based on the data in the CSV event files or underlying database. Any changes to the database or CSV files is automatically reflected in ten seconds on the web page using AJAX techniques embedded in the PrimeFaces server controls used.
+
 \subsection{Test Results and Analysis}
 
+\subsubsection{Events Generation from Database}
+
+\noindent Events were successfully generated in CSV format for the case file number supplied by the investigator/user through the web or mobile interface. The files generated are placed in the project class path from where the processing CEP engine \cite{twentyfive} picks them for processing. The CSV files are only created for case files with existing records in the database for any of the five events(Funds Request, Funds Release,Email,PhoneLogs and Payments) supported by the system.
+
+\noindent In a live production environment, the location of the event files may be managed differently taking into consideration the CEP engine \cite{twentyfive} and also the user needs. The file generation tests were  generally successful and quite fast give the use of JPA \cite{oracle}entity to query the database using its object mapping architecture.
+
+\subsubsection{Defining Criteria and Processing Events}
+
+\noindent The web and mobile interfaces provide the user with the functionality to determine what the CEP engine \cite{twentyfive} should query. The users were able to easily select values using the available GUI(Graphical User Interface) controls without any issues.
+
+\noindent The processing speed was noted to be good though not as expected perhaps owing to the fact that system architecture is such that both generation events and event processing are launched by one command. This architecture may need to be reviewed in future to enable faster processing taking advantage of the CEP engine \cite{twentyfive} processing capabilities. It should also be noted that the tests carried out involved very few records and a computer with good specifications (3GHZ,8GB RAM, Core i7  Processor) and therefore processing was expected to be very quick.
+
+\subsubsection{Output of Computed Results}
+
+\noindent The output to the user is two-fold in PDF format as a file and a live display to the web or mobile page. It also supports a real-time element that relays results based on any changes in the incoming event files or database tables.
+
+\noindent The PDF report file was found to be informative enough except for the not so appealing look. The web page view had a good feel and look with organized tabular display of results. The mobile had some challenges with adjusting to different mobile resolutions but this could have been corrected with more time availed. The reporting can be improved in the future by using graphs to indicate events from time to time as they happen.
+
+\noindent Generally, the system was a success with at least the basic requirements working as expected. It is expected that with some improvement in the variety of events supported and information analysis, the tool will be of great importance to the Crime Investigation Department of the Uganda Police and other government agencies.
